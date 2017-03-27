@@ -248,7 +248,7 @@ if ( ! function_exists( 'spiderprime_breadcrumbs' ) ) {
 	    		$breadcrumbs = array();
 	    		while ($parent_id) {
 	    			if(!empty($parent_id)){
-		    			$page = (object) get_pages($parent_id)[0];
+		    			$page = (object) get_posts($parent_id)[0];
 		    			$breadcrumbs[] = '<a href="' . esc_url( get_permalink($page->ID) ) . '">' . esc_attr(get_the_title($page->ID)) . '</a>';
 		    			$parent_id = $page->post_parent;
 		    		}

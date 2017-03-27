@@ -10,6 +10,9 @@
 get_header(); 
 
 	$spiderprime_single_layout = esc_attr( get_post_meta($post->ID, 'spiderprime_page_layouts', true) );
+	if(!$spiderprime_single_layout){
+		$spiderprime_single_layout = 'rightsidebar';
+	}
 	if(!empty($spiderprime_single_layout) && $spiderprime_single_layout == 'rightsidebar' || $spiderprime_single_layout == 'leftsidebar' ) {
 		$spiderprime_col = 9;
 	}else if(!empty($spiderprime_single_layout) && $spiderprime_single_layout == 'nosidebar' ){

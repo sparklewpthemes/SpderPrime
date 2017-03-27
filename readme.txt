@@ -1,20 +1,20 @@
 === SpiderPrime ===
 
-SpiderPrime is responsive multipurpose WordPress business theme. SpiderPrime is a free and elegant theme that can be used for web agency business,corporate business,personal or portfolio, photography business sites and freelancer. It comes with a clean and beautiful design, completed by the parallax background image effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. SpiderPrime is Compatible with WPML and SEO Friendly and is one of the best business themes.
+SpiderPrime is responsive multipurpose lightweight, HTML5 / CSS3 theme. SpiderPrime is created with the bootstrap framework that can be used for web agency business, corporate business, personal or portfolio, photography business sites, freelancer and much more. It comes with a clean and beautiful design, accompanied with the parallax background image effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. SpiderPrime provides three types of page full width, left sidebar and right sidebar options while you create pages. SpiderPrime is compatible and tested with WooCommerce so you can manage your store easily. This theme gives you all features of WooCommerce Store. SpiderPrime is a translation ready theme with WPML compatible with WooCommerce, bbPress, Contact Form7 and much more.
 
 Contributors: sparklewpthemes
 
-Tags: left-sidebar, right-sidebar, theme-options, featured-images, custom-logo, translation-ready
+Tags: left-sidebar, right-sidebar, theme-options, featured-images, custom-menu, custom-logo, translation-ready, portfolio, footer-widgets, e-commerce
 
 Requires at least: 4.0
-Tested up to: 4.5.3
+Tested up to: 4.7
 Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
 == Description ==
 
-SpiderPrime is responsive multipurpose WordPress business theme. SpiderPrime is a free and elegant theme that can be used for web agency business,corporate business,personal or portfolio, photography business sites and freelancer. It comes with a clean and beautiful design, completed by the parallax background image effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. SpiderPrime is Compatible with WPML and SEO Friendly and is one of the best business themes.
+SpiderPrime is responsive multipurpose lightweight, HTML5 / CSS3 theme. SpiderPrime is created with the bootstrap framework that can be used for web agency business, corporate business, personal or portfolio, photography business sites, freelancer and much more. It comes with a clean and beautiful design, accompanied with the parallax background image effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. SpiderPrime provides three types of page full width, left sidebar and right sidebar options while you create pages. SpiderPrime is compatible and tested with WooCommerce so you can manage your store easily. This theme gives you all features of WooCommerce Store. SpiderPrime is a translation ready theme with WPML compatible with WooCommerce, bbPress, Contact Form7 and much more.
 
 
 == Translation ==
@@ -23,6 +23,7 @@ SpiderPrime theme is translation ready.
 
 
 == License ==
+
 SpiderPrime is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2 or later.
 License: GNU General Public License v2 or later
@@ -72,6 +73,11 @@ https://www.pexels.com/photo/black-and-white-city-houses-skyline-2255/ - License
 
 
 == Changelog ==
+
+= 1.0.7 =
+
+** Compatible with WooCommerce and bbPress major plugins.
+** Fixed the some undefine php variable.
 
 = 1.0.6 =
 

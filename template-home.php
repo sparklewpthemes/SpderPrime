@@ -31,10 +31,14 @@ get_header(); ?>
 				$section_layout = esc_attr( $section->section_value );
 				$section_category = get_cat_ID( esc_attr( $section->section_value_cat ) );
 				$section_bg_image = esc_url( $section->bg_image_url );
+				$section_button_text = esc_attr( $section->view_more_text );
+				$section_button_link = esc_url( $section->view_more_link );
 				$args = array(
-					'cat_id'  => $section_category,
-					'page_id' => $page->ID,
-					'bg_image'=> $section_bg_image
+					'cat_id'      => $section_category,
+					'page_id'     => $page->ID,
+					'bg_image'    => $section_bg_image,
+					'button_text' => $section_button_text,
+					'button_link' => $section_button_link
 				);
 		?>
 		<?php if( $section_layout != 'Call to Action Section') { ?>
@@ -56,10 +60,6 @@ get_header(); ?>
 		<?php } ?>
 					<?php 
 						switch ($section_layout) {
-
-							case 'Default Section':
-								do_action('spiderprime_default_section');
-								break;
 
 							case 'Features Section':
 								do_action('spiderprime_features_section', $args);

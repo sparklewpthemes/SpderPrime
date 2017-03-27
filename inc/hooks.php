@@ -4,21 +4,6 @@
 */
 
 /**
- * Default Section
-*/
-if(!function_exists('spiderprime_default_section')){
-	function spiderprime_default_section(){
-	?>
-		<div class="row-fluid services-con">
-			<div class="spiderprime-default-section">
-				
-			</div>
-		</div>
-	<?php }
-}
-add_action('spiderprime_default_section', 'spiderprime_default_section');
-
-/**
  * Features Section
 */
 if(!function_exists('spiderprime_features_section')){
@@ -27,6 +12,8 @@ if(!function_exists('spiderprime_features_section')){
 	<div class="row-fluid services-con">	
 		<?php
 			$cat_id = $args['cat_id'];
+			$button_text = $args['button_text'];
+			$button_link = $args['button_link'];
 			$args = array(
 				'cat' => $cat_id,
 				'posts_per_page' => 3
@@ -47,6 +34,13 @@ if(!function_exists('spiderprime_features_section')){
 				</article>
 		<?php } } wp_reset_postdata(); ?>
 	</div>
+
+	<?php if(!empty($button_text)) { ?>
+		<a class="look-all" href="<?php echo esc_url($button_link); ?>">
+			<?php echo esc_attr($button_text); ?>
+		</a>
+	<?php } ?>
+
 	<?php }
 }
 add_action('spiderprime_features_section', 'spiderprime_features_section');
@@ -57,6 +51,8 @@ add_action('spiderprime_features_section', 'spiderprime_features_section');
 if(!function_exists('spiderprime_calltoaction_section')){
 	function spiderprime_calltoaction_section( $args ){
 	 $page_id = $args['page_id'];
+	 $button_text = $args['button_text'];
+	 $button_link = $args['button_link'];
 	 $section_bg_image = $args['bg_image'];
 	 if(!empty($page_id)) { ?>
 		<div class="banner parallax-window" <?php if(!empty( $section_bg_image )) { ?> data-parallax="scroll" data-image-src="<?php echo esc_url( $section_bg_image ); ?>" <?php } ?>>
@@ -67,6 +63,11 @@ if(!function_exists('spiderprime_calltoaction_section')){
 		        ?>
 		        	<?php the_title( '<h1>', '</h1>' ); ?>
 					<?php the_content(); ?>
+					<?php if(!empty($button_text)) { ?>
+						<a class="purchase-button" href="<?php echo esc_url($button_link); ?>">
+							<?php echo esc_attr($button_text); ?>
+						</a>
+					<?php } ?>
 				<?php } wp_reset_postdata(); ?>			
 			</div>
 		</div>
@@ -84,6 +85,8 @@ if(!function_exists('spiderprime_portfolio_section')){
 	<div class="row-fluid">
 		<?php
 			$cat_id = $args['cat_id'];
+			$button_text = $args['button_text'];
+			$button_link = $args['button_link'];
 			$args = array(
 				'cat' => $cat_id,
 				'posts_per_page' => 3
@@ -110,6 +113,13 @@ if(!function_exists('spiderprime_portfolio_section')){
 			</div>
 		<?php } } wp_reset_postdata(); ?>
 	</div>
+
+	<?php if(!empty($button_text)) { ?>
+		<a class="look-all" href="<?php echo esc_url($button_link); ?>">
+			<?php echo esc_attr($button_text); ?>
+		</a>
+	<?php } ?>
+
 	<?php }
 }
 add_action('spiderprime_portfolio_section', 'spiderprime_portfolio_section');
@@ -123,6 +133,8 @@ if(!function_exists('spiderprime_blog_section')){
 	<div class="row-fluid">
 		<?php
 			$cat_id = $args['cat_id'];
+			$button_text = $args['button_text'];
+			$button_link = $args['button_link'];
 			$args = array(
 				'cat' => $cat_id,
 				'posts_per_page' => 3
@@ -158,6 +170,11 @@ if(!function_exists('spiderprime_blog_section')){
 			</div>
 		<?php  } } wp_reset_postdata(); ?>
 	</div>
+	<?php if(!empty($button_text)) { ?>
+		<a class="look-all" href="<?php echo esc_url($button_link); ?>">
+			<?php echo esc_attr($button_text); ?>
+		</a>
+	<?php } ?>
 	<?php }
 }
 add_action('spiderprime_blog_section', 'spiderprime_blog_section');

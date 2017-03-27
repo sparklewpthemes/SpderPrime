@@ -36,6 +36,11 @@ if ( ! function_exists( 'spiderprime_setup' ) ) {
 		add_theme_support( 'title-tag' );
 
 		/*
+		 * Editor style.
+		*/
+		add_editor_style( 'assets/css/editor-style.css' );
+
+		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
@@ -91,6 +96,9 @@ if ( ! function_exists( 'spiderprime_setup' ) ) {
 			'flex-width'  => true,
 			'header-text' => array( '.site-title', '.site-description' ),
 		) );
+
+		// Indicate widget sidebars can use selective refresh in the Customizer.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
 }
 add_action( 'after_setup_theme', 'spiderprime_setup' );
@@ -182,7 +190,7 @@ function spiderprime_scripts() {
 	    wp_enqueue_style('spiderprime-google-fonts', add_query_arg( $spiderprime_font_args, "//fonts.googleapis.com/css" ) );
 		
 	    /* SpiderPrime Font Awesome */
-	    wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/library/fontawesome/css/font-awesome.min.css', esc_attr( $theme_version ) );
+	    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/library/fontawesome/css/font-awesome.min.css', esc_attr( $theme_version ) );
 
 	    /* SpiderPrime BootStrap */
 	    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/library/bootstrap/css/bootstrap.css', esc_attr( $theme_version ) );
@@ -200,6 +208,11 @@ function spiderprime_scripts() {
 	    /* SpiderPrime Main Style */
 		wp_enqueue_style('spiderprime-style', get_stylesheet_uri() );
 	 	wp_enqueue_style('spiderprime-responsive', get_template_directory_uri() . '/assets/css/responsive.css');
+
+	 	if ( has_header_image() ) {
+	    	$custom_css = '.site-header{ background-image: url("' . esc_url( get_header_image() ) . '"); background-repeat: no-repeat; background-position: center center; background-size: cover; }';
+	    	wp_add_inline_style( 'spiderprime-style', $custom_css );
+	    }
 
  		/*SpiderPrime Bootstrap JS*/
  		wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/library/bootstrap/js/bootstrap.min.js', array('jquery'), esc_attr( $theme_version ), true);
@@ -251,6 +264,11 @@ add_action( 'admin_enqueue_scripts', 'spiderprime_admin_styles', 10 );
  * Custom template tags for this theme.
 */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme header.
+*/
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -372,3 +390,190 @@ if ( ! function_exists( 'spiderprime_save_page_settings' ) ) {
     }
 }
 add_action('save_post', 'spiderprime_save_page_settings');
+
+/**
+ * Add teh features image in bbpress posts
+*/
+add_post_type_support('forum', array('thumbnail'));
+function spiderprime_forum_icons() {
+	if ( 'forum' == get_post_type() ) {
+		global $post;
+	    if ( has_post_thumbnail($post->ID) ){
+	    	echo '<span class="sp-forum-icon">';
+	    		echo get_the_post_thumbnail($post->ID,'thumbnail',array('class' => 'alignleft forum-icon'));
+	    	echo '</span>';
+	    }
+	}
+}
+add_action('bbp_theme_before_forum_title','spiderprime_forum_icons');
+
+
+/**
+ * Query WooCommerce activation
+*/
+if ( ! function_exists( 'spiderprime_is_woocommerce_activated' ) ) {
+	function spiderprime_is_woocommerce_activated() {
+		return class_exists( 'WooCommerce' ) ? true : false;
+	}
+}
+
+
+/**
+ * Woo Commerce Number of row filter Function
+*/
+add_filter('loop_shop_columns', 'spiderprime_loop_columns');
+if (!function_exists('spiderprime_loop_columns')) {
+    function spiderprime_loop_columns() {
+        $spiderprime_col = 3;
+        return $spiderprime_col;
+    }
+}
+add_action( 'body_class', 'spiderprime_woocommerce_body_class');
+if (!function_exists('spiderprime_woocommerce_body_class')) {
+    function spiderprime_woocommerce_body_class( $class ) {
+           $class[] = 'columns-'.spiderprime_loop_columns();
+           return $class;
+    }
+}
+
+/**
+ * Woo Commerce Related product
+*/
+add_filter( 'woocommerce_output_related_products_args', 'spiderprime_related_products_args' );
+function spiderprime_related_products_args( $args ) {
+    $args['columns']  = 3;
+    return $args;
+}
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+add_action( 'woocommerce_after_single_product_summary', 'spiderprime_woocommerce_output_upsells', 15 );
+if ( ! function_exists( 'spiderprime_woocommerce_output_upsells' ) ) {
+    function spiderprime_woocommerce_output_upsells() {
+        woocommerce_upsell_display( 3,3 ); 
+    }
+}
+
+
+/**
+ * Woo Commerce Add Content Primary Div Function
+*/
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+
+function spiderprime_woocommerce_template_loop_product_thumbnail(){ ?>
+    <div class="product-item">
+        <div class="product-item-body">
+            <a href="<?php the_permalink(); ?>" class="product-item-link">
+              <?php echo woocommerce_get_product_thumbnail(); ?>
+            </a>
+            <?php global $post, $product; if ( $product->is_on_sale() ) : 
+              echo apply_filters( 'woocommerce_sale_flash', '<div class="spiderprime-sale-label buzz-top-right">' . __( 'Sale!', 'spiderprime' ) . '</div>', $post, $product ); ?>
+            <?php endif; ?>
+            <?php
+               global $product_label_custom;
+               if ($product_label_custom != ''){
+                echo '<div class="spiderprime-sale-label buzz-top-left">'.__('New','spiderprime').'</div>';
+               }
+            ?>
+        </div>
+    </div>    
+  <?php 
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'spiderprime_woocommerce_template_loop_product_thumbnail', 10 );
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+
+if (!function_exists('spiderprime_woocommerce_shop_loop_item_title')) {
+    function spiderprime_woocommerce_shop_loop_item_title(){ ?>      
+        <div class="product-item-details">
+          <a class="product-title" href="<?php the_permalink(); ?>">
+              <?php the_title( ); ?>
+          </a>
+      <?php 
+    }
+}
+add_action( 'woocommerce_shop_loop_item_title', 'spiderprime_woocommerce_shop_loop_item_title', 10 );
+
+
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+function spiderprime_woocommerce_after_shop_loop_item_title() { ?>
+    <div class="price-rating-wrap buzz-clearfix">        
+        <?php woocommerce_template_loop_price(); ?>
+    </div>
+<?php }
+add_action('woocommerce_after_shop_loop_item_title', 'spiderprime_woocommerce_after_shop_loop_item_title');
+
+
+
+if (!function_exists('spiderprime_woocommerce_product_item_details_close')) {
+    function spiderprime_woocommerce_product_item_details_close(){ ?>
+      </div>
+      <?php 
+    }
+}
+add_action( 'woocommerce_template_loop_price', 'spiderprime_woocommerce_product_item_details_close', 9 );
+
+
+
+if (!function_exists('spiderprime_woocommerce_output_content_wrapper')) {
+    function spiderprime_woocommerce_output_content_wrapper(){ ?>
+    	<?php do_action('spiderprime_breadcrumb'); ?>
+    	<div class="container">
+			<section class="about-us">
+				<div class="row-fluid our-description">
+		        	<section class="span9">
+    <?php   }
+}
+add_action( 'woocommerce_before_main_content', 'spiderprime_woocommerce_output_content_wrapper', 10 );
+
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+if (!function_exists('spiderprime_woocommerce_output_content_wrapper_end')) {
+    function spiderprime_woocommerce_output_content_wrapper_end(){ ?>
+		            </section><!-- #section -->
+		        
+			        <section class="span3 sidebar">	
+						<?php get_sidebar(); ?>
+					</section><!-- #secondary -->
+				</div><!-- row-fluid our-description -->
+		    </section>
+		</div>        
+    <?php   }
+}
+add_action( 'woocommerce_after_main_content', 'spiderprime_woocommerce_output_content_wrapper_end', 10 );
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+
+if ( isset( $wp_customize->selective_refresh ) ) {
+	
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector' => '.site-title',
+		'container_inclusive' => false,
+		'render_callback' => 'spiderprime_customize_partial_blogname',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector' => '.site-description',
+		'container_inclusive' => false,
+		'render_callback' => 'spiderprime_customize_partial_blogdescription',
+	) );
+
+	
+	$wp_customize->selective_refresh->add_partial( 'spiderprime_email_icon', array(
+		'selector' => '.quickinfowrap',
+		'container_inclusive' => false,
+	) );
+
+}
+
+function spiderprime_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+function spiderprime_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}

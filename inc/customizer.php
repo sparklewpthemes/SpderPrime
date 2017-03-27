@@ -86,6 +86,8 @@ function spiderprime_customize_register( $wp_customize ) {
 	            "section_value" => '',
 	            "section_value_cat" => '',
 	            "bg_image_url" => '',
+	            "view_more_text" => '',
+		        "view_more_link" => '',
 	          )
 	        )
 	      )
@@ -100,6 +102,8 @@ function spiderprime_customize_register( $wp_customize ) {
 			'homepage_section_layout' => true,
 			'homepage_section_category' => true,
 			'homepage_bg_image' => true,
+			'homepage_button_text' => true,		
+			'homepage_button_link' => true,
 		) ) );
 
 
