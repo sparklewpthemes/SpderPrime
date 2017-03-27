@@ -11,9 +11,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-project '. get_post_format()); ?>>
 	
 	<div class="post-type">
-		<?php if(!empty(get_post_format())) : ?>
-			<span></span>
-		<?php endif; ?>
 		<a class="comment-number" href="<?php echo get_comments_link( $post->ID ); ?>">
 			<?php comments_number('0','1','%'); ?>
 		</a>

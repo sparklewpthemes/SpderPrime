@@ -47,7 +47,12 @@ get_header(); ?>
 
 							endwhile;
 
-							the_posts_navigation();
+							the_posts_pagination( 
+			            		array(
+								    'prev_text' => __( 'Prev', 'spiderprime' ),
+								    'next_text' => __( 'Next', 'spiderprime' ),
+								)
+				            );
 
 						else :
 
@@ -59,9 +64,7 @@ get_header(); ?>
 
 				<?php  if ($spiderprime_page_layout == 'rightsidebar') : ?>
 					<section class="span3 sidebar">
-
 						<?php get_sidebar('right'); ?>
-
 					</section> <!-- .span3 -->
 				<?php endif; ?>
 

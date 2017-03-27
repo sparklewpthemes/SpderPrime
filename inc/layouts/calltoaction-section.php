@@ -22,12 +22,7 @@
 					$content = str_replace(']]>', ']]>', $content);
 					echo $content;
 				?>
-			<?php } } wp_reset_query(); ?>
-			<?php if(!empty( $section_view_more_text )) { ?>
-				<a class="purchase-button" href="<?php echo $section_view_more_link ?>">
-					<?php echo $section_view_more_text; ?>
-				</a>
-			<?php } ?>
+			<?php } } wp_reset_query(); ?>			
 		</div>
 	</div>
 <?php } ?>

@@ -26,6 +26,33 @@ class spiderprime_Image_Radio_Control extends WP_Customize_Control {
     <?php } 
 }
 
+class Spiderprime_Category_Dropdown extends WP_Customize_Control{
+    private $cats = false;
+
+    public function __construct($manager, $id, $args = array(), $options = array()){
+        $this->cats = get_categories($options);
+
+        parent::__construct( $manager, $id, $args );
+    }
+
+    public function render_content(){
+        if(!empty($this->cats)){
+            ?>
+                <label>
+                  <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                  <select <?php $this->link(); ?>>
+                       <?php
+                            foreach ( $this->cats as $cat ){
+                                printf('<option value="%s" %s>%s</option>', $cat->term_id, selected($this->value(), $cat->term_id, false), $cat->name);
+                            }
+                       ?>
+                  </select>
+                </label>
+            <?php
+        }
+   }
+}
+
 class SpiderPrime_General_Repeater extends WP_Customize_Control {
         private $options = array();
         public function __construct( $manager, $id, $args = array() ) {
@@ -46,7 +73,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
                 $homepage_section_page = $options['homepage_section_page'];
                     $spiderprime_pages = get_pages();
                     $sp_pages = array();
-                    $sp_pages[] = 'Select Section Page';
+                    $sp_pages[] = __('Select Section Page','spiderprime');
                     foreach ( $spiderprime_pages as $sp_page ) {
                        $sp_pages[$sp_page->post_title] = $sp_page->post_title;     
                     }
@@ -57,7 +84,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
 
             if(!empty($options['homepage_section_layout'])){
                 $homepage_section_layout = $options['homepage_section_layout'];
-                $section_layout = array( 'Default Section','Features Section','Portfolio Section','Call to Action Section','Blog Section','Our Team Section','Testimonial Section');
+                $section_layout = array( __('Default Section', 'spiderprime'), __('Features Section','spiderprime'), __('Portfolio Section','spiderprime'), __('Call to Action Section','spiderprime'), __('Blog Section','spiderprime'), __('Our Team Section','spiderprime'), __('Testimonial Section','spiderprime'));
             } else {
                  $homepage_section_layout = false;
             }
@@ -66,7 +93,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
                 $homepage_section_category = $options['homepage_section_category'];
                     $spiderprime_categorys = get_categories();
                     $sp_categorys = array();
-                    $sp_categorys[] = 'Select Section Category';
+                    $sp_categorys[] = __('Select Section Category','spiderprime');
                     foreach ( $spiderprime_categorys as $sp_category ) {
                        $sp_categorys[$sp_category->slug] = $sp_category->name; 
                     }
@@ -246,7 +273,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
                                             }
 
                                                 if($homepage_bg_image==true){ ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Section Background Image','spiderprime')?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Section Background Image','spiderprime'); ?></span>
                                                     <p class="spiderprime_image_control">
                                                         <input type="text" class="widefat section_bg_media_url" value="<?php if(!empty($icon->bg_image_url)) {echo esc_attr($icon->bg_image_url);} ?>">
                                                         <input type="button" class="button button-primary custom_media_button_spiderprime" value="<?php esc_html_e('Upload Image','spiderprime'); ?>" />
@@ -255,27 +282,27 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
 
                                                 if($homepage_button_title ==true){
                                         ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Enter Title Text','spiderprime')?></span>     
+                                                    <span class="customize-control-title"><?php esc_html_e('Enter Title Text','spiderprime'); ?></span>     
                                                     <input type="text" value="<?php if(!empty($icon->title_text)) echo esc_attr($icon->title_text); ?>" class="spiderprime_title" placeholder="<?php esc_html_e('Enter Title Text','spiderprime'); ?>"/>
                                         <?php
                                                 }
 
                                                 if($homepage_button_textarea ==true){
                                         ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Enter Short Text','spiderprime')?></span>     
+                                                    <span class="customize-control-title"><?php esc_html_e('Enter Short Text','spiderprime'); ?></span>     
                                                     <textarea class="spiderprime_short_textarea" placeholder="<?php esc_html_e('Enter Short Text','spiderprime'); ?>"><?php if(!empty($icon->short_textarea)) {echo esc_attr($icon->short_textarea);} ?></textarea>
                                         <?php
                                                 }
 
                                                 if($homepage_button_text==true){
                                         ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Enter View More Button Text','spiderprime')?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Enter View More Button Text','spiderprime'); ?></span>
                                                     <input type="text" value="<?php if(!empty($icon->view_more_text)) echo esc_attr($icon->view_more_text); ?>" class="spiderprime_view_more_button_text" placeholder="<?php esc_html_e('Enter View More Text','spiderprime'); ?>"/>
                                         <?php
                                                 }                                                
 
                                                 if($homepage_button_link){ ?>
-                                                    <span class="customize-control-title"><?php esc_html_e('Enter View More Button Link','spiderprime')?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Enter View More Button Link','spiderprime'); ?></span>
                                                     <input type="text" value="<?php if(!empty($icon->view_more_link)) echo esc_url($icon->view_more_link); ?>" class="spiderprime_view_more_button_link" placeholder="<?php esc_html_e('Enter View More Link','spiderprime'); ?>"/>
                                         <?php   }
                                         ?>
@@ -292,12 +319,12 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
                             foreach($json as $icon){
                     ?>
                                 <div class="spiderprime_general_control_repeater_container spiderprime_draggable">
-                                    <div class="spiderprime-customize-control-title"><?php esc_html_e('HomePage Section Area','spiderprime')?></div>
+                                    <div class="spiderprime-customize-control-title"><?php esc_html_e('HomePage Section Area','spiderprime'); ?></div>
                                     <div class="spiderprime-box-content-hidden">
                                     <?php
                                          if($homepage_section_page == true){
                                     ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Select Section Page','spiderprime')?></span>
+                                        <span class="customize-control-title"><?php esc_html_e('Select Section Page','spiderprime'); ?></span>
                                         <select name="<?php echo esc_attr($this->id); ?>" class="spiderprime_homepage_section_page">
                                             <?php
                                                 foreach($section_pages as $section_page) {
@@ -310,7 +337,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
 
                                         if($homepage_section_layout == true){
                                     ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Select Section Layout','spiderprime')?></span>
+                                        <span class="customize-control-title"><?php esc_html_e('Select Section Layout','spiderprime'); ?></span>
                                         <select name="<?php echo esc_attr($this->id); ?>" class="spiderprime_homepage_section_layout">
                                             <?php
                                                 foreach($section_layout as $section) {
@@ -323,7 +350,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
 
                                         if($homepage_section_category == true){
                                     ?>
-                                        <span class="customize-control-title"><?php esc_html_e('Select Section Category','spiderprime')?></span>
+                                        <span class="customize-control-title"><?php esc_html_e('Select Section Category','spiderprime'); ?></span>
                                         <select name="<?php echo esc_attr($this->id); ?>" class="spiderprime_homepage_section_category">
                                             <?php
                                                 foreach($section_categorys as $section_category) {
@@ -335,7 +362,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
                                         }
 
                                         if($homepage_bg_image == true){ ?>
-                                            <span class="customize-control-title"><?php esc_html_e('Section Background Image','spiderprime')?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Section Background Image','spiderprime'); ?></span>
                                             <p class="spiderprime_image_control">
                                                 <input type="text" class="widefat section_bg_media_url" value="<?php if(!empty($icon->bg_image_url)) {echo esc_attr($icon->bg_image_url);} ?>">
                                                 <input type="button" class="button button-primary custom_media_button_spiderprime" value="<?php esc_html_e('Upload Image','spiderprime'); ?>" />
@@ -351,20 +378,20 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
 
                                             if($homepage_button_textarea ==true){
                                     ?>
-                                                <span class="customize-control-title"><?php esc_html_e('Enter Short Text','spiderprime')?></span>  
-                                                <textarea class="spiderprime_short_textarea" placeholder="<?php esc_html_e('Enter Short Text','spiderprime'); ?>"><?php if(!empty($icon->short_textarea)) {echo esc_attr($icon->short_textarea);} ?></textarea>
+                                                <span class="customize-control-title"><?php esc_html_e('Enter Short Text','spiderprime'); ?></span>  
+                                                <textarea class="spiderprime_short_textarea" placeholder="<?php esc_html_e('Enter Short Text','spiderprime'); ?>"><?php if(!empty($icon->short_textarea)) { echo esc_attr($icon->short_textarea);} ?></textarea>
                                     <?php
                                             }
 
                                             if($homepage_button_text==true){
                                         ?>
-                                                <span class="customize-control-title"><?php esc_html_e('Enter View More Button Text','spiderprime')?></span>
+                                                <span class="customize-control-title"><?php esc_html_e('Enter View More Button Text','spiderprime'); ?></span>
                                                 <input type="text" value="<?php if(!empty($icon->view_more_text)) echo esc_attr($icon->view_more_text); ?>" class="spiderprime_view_more_button_text" placeholder="<?php esc_html_e('Enter View More Text','spiderprime'); ?>"/>
                                     <?php
                                             }                                       
 
                                             if($homepage_button_link){ ?>
-                                                <span class="customize-control-title"><?php esc_html_e('Enter View More Button Link','spiderprime')?></span>
+                                                <span class="customize-control-title"><?php esc_html_e('Enter View More Button Link','spiderprime'); ?></span>
                                                 <input type="text" value="<?php if(!empty($icon->view_more_link)) echo esc_url($icon->view_more_link); ?>" class="spiderprime_view_more_button_link" placeholder="<?php esc_html_e('Enter View More Link','spiderprime'); ?>"/>
                                     <?php   }
                                         ?>
@@ -390,7 +417,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
                     <input type="hidden" id="spiderprime_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="spiderprime_repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>" />
             <?php } ?>
             </div>
-            <button type="button"   class="button add_field spiderprime_general_control_new_field">
+            <button type="button" class="button add_field spiderprime_general_control_new_field">
             <?php esc_html_e('Add New Section Area','spiderprime'); ?></button>
         <?php
 

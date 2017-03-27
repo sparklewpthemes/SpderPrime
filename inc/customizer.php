@@ -29,23 +29,16 @@ function spiderprime_customize_register( $wp_customize ) {
 	$wp_customize->get_section('title_tagline' )->panel = 'spiderprime_general_settings';
 	$wp_customize->get_section('title_tagline' )->priority = 0;
 	$wp_customize->get_section('background_image' )->panel = 'spiderprime_general_settings';
-	$wp_customize->remove_section('header_image' );
+	$wp_customize->get_section('header_image' )->panel = 'spiderprime_general_settings';
 	$wp_customize->get_section('colors' )->panel = 'spiderprime_general_settings';
-	$wp_customize->get_section('colors')->title = __( 'Colors Settings','spiderprime' );      
+	$wp_customize->get_section('colors')->title = __( 'Themes Colors','spiderprime' );      
 
 	// Main Slider Settings
-	$wp_customize->add_panel('spiderprime_home_slider_options', array(
-	  'capabitity' => 'edit_theme_options',
-	  'description' => __('Manage you home slider section here as you want', 'spiderprime'),
-	  'title' => __('Slider Section Settings', 'spiderprime'),
+	$wp_customize->add_section('spiderprime_homepage_slider_setting', array(
 	  'priority' => 6,
+	  'title' => __('Slider Settings', 'spiderprime'),
+	  'description' => __('Manage you home slider section here as you want', 'spiderprime'),
 	));
-
-		$wp_customize->add_section('spiderprime_homepage_slider_setting', array(
-		  'priority' => 2,
-		  'title' => __('Add Slider Here', 'spiderprime'),
-		  'panel' => 'spiderprime_home_slider_options'
-		));
 
 		$wp_customize->add_setting('spiderprime_slider_section_options', array(
 		 'default' => 'enable',
@@ -55,8 +48,7 @@ function spiderprime_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control('spiderprime_slider_section_options', array(
 		 'type' => 'radio',
-		 'label' => __('Enable or Disable Slider Section', 'spiderprime'),
-		 'description' => __('Choose any options as you want','spiderprime'),
+		 'label' => __('Enable/Disable Slider Section', 'spiderprime'),
 		 'section' => 'spiderprime_homepage_slider_setting',
 		 'setting' => 'spiderprime_slider_section_options',
 		 'choices' => array(
@@ -64,47 +56,25 @@ function spiderprime_customize_register( $wp_customize ) {
 		    'disable' => __('Disable', 'spiderprime'),
 		)));
 
-		$wp_customize->add_setting( 'spiderprime_homepage_slider_settings', array(
-			'sanitize_callback' => 'spiderprime_sanitize_repeater',
-			  'default' => json_encode(
-	        	array( 
-		          array(
-		            "bg_image_url" => get_template_directory_uri().'/images/slider1.jpg',
-		            "title_text" => "We Create Awesome Themes",
-		            "short_textarea" => "Spider Prime is responsive multipurpose WordPress business theme.",
-		            "view_more_text" => "LOOK ALL PROJECTS",
-		            "view_more_link" => "#",
-		          )
-	        	)
-	      	)
-		));
+		/* Main Slider Category */
+		$wp_customize->add_setting( 'spiderprime_slider_team_id', array(
+			'default' => '',
+			'sanitize_callback' => 'spiderprime_sanitize_number'
+		) );
 
-
-		$wp_customize->add_control( new SpiderPrime_General_Repeater( $wp_customize, 'spiderprime_homepage_slider_settings', array(
-			'label'   => esc_html__('Manage HomePage Section Area','spiderprime'),
-			'section' => 'spiderprime_homepage_slider_setting',
+		$wp_customize->add_control( new Spiderprime_Category_Dropdown( $wp_customize, 'spiderprime_slider_team_id', array(
+		    'label' => __( 'Select Slide Category', 'spiderprime' ),
+		    'section' => 'spiderprime_homepage_slider_setting',
 			'priority' => 30,
-			'homepage_bg_image' => true,
-			'homepage_button_title' => true,
-			'homepage_button_textarea' => true,		
-			'homepage_button_text' => true,		
-			'homepage_button_link' => true,
 		) ) );
 
-	// Start of the Design Options
-	$wp_customize->add_panel('spiderprime_home_section_options', array(
-	  'capabitity' => 'edit_theme_options',
-	  'description' => __('Manage you home page section here as you want', 'spiderprime'),
-	  'priority' => 7,
-	  'title' => __('HomePage Section Settings', 'spiderprime')
-	));
 
-		// site layout setting
-		$wp_customize->add_section('spiderprime_homepage_section_setting', array(
-		  'priority' => 2,
-		  'title' => __('All HomePage Sections', 'spiderprime'),
-		  'panel' => 'spiderprime_home_section_options'
-		));		
+	// Start of the Design Options
+	$wp_customize->add_section('spiderprime_homepage_section_setting', array(
+	  'priority' => 7,
+	  'title' => __('Configer HomePage Settings', 'spiderprime'),
+	  'description' => __('Manage you home page section here as you want', 'spiderprime'),
+	));		
 
 		/* Services content */
 		$wp_customize->add_setting( 'spiderprime_homepage_settings', array(
@@ -112,12 +82,10 @@ function spiderprime_customize_register( $wp_customize ) {
 			'default' => json_encode(
 	        array( 
 	          array(
-	            "section_value_page" => 'Sample Page',
-	            "section_value" => 'Blog Section',
-	            "section_value_cat" => 'Uncategorized',
-	            "bg_image_url" => get_template_directory_uri().'/images/bg1.jpg',
-	            "view_more_text" => "Look all Posts",
-	            "view_more_link" => "#",
+	            "section_value_page" => '',
+	            "section_value" => '',
+	            "section_value_cat" => '',
+	            "bg_image_url" => '',
 	          )
 	        )
 	      )
@@ -131,9 +99,7 @@ function spiderprime_customize_register( $wp_customize ) {
 			'homepage_section_page' => true,
 			'homepage_section_layout' => true,
 			'homepage_section_category' => true,
-			'homepage_bg_image' => true,		
-			'homepage_button_text' => true,
-			'homepage_button_link' => true,
+			'homepage_bg_image' => true,
 		) ) );
 
 
@@ -201,7 +167,7 @@ function spiderprime_customize_register( $wp_customize ) {
 		)));	
 
 		$wp_customize->add_setting('spiderprime_breadcrumbs_min_height_options', array(
-		  'default' => '80',
+		  'default' => '250',
 		  'capability' => 'edit_theme_options',
 		  'sanitize_callback' => 'spiderprime_sanitize_number'  // done
 		));
@@ -310,7 +276,6 @@ function spiderprime_customize_register( $wp_customize ) {
 		  'default' => '',
 		  'capability' => 'edit_theme_options',
 		  'sanitize_callback' => 'wp_filter_nohtml_kses',
-		  //'sanitize_js_callback' => 'wp_filter_nohtml_kses'  //done
 		));
 
 		$wp_customize->add_control('spiderprime_custom_css', array(
@@ -394,13 +359,13 @@ function spiderprime_customize_register( $wp_customize ) {
 	  $wp_customize->add_setting('spiderprime_footer_buttom_copyright_setting', array(
 	     'default' => '',
 	     'capability' => 'edit_theme_options',
-	     'sanitize_callback' => 'esc_textarea', //done
+	     'sanitize_callback' => 'spiderprime_text_sanitize', //done
 	     'transport'         => 'postMessage',
 	  ));
 
 	  $wp_customize->add_control('spiderprime_footer_buttom_copyright_setting', array(
 	     'type' => 'textarea',
-	     'label' => __('Footer Bottom Left Content (Copyright Text)', 'spiderprime'),
+	     'label' => __('Footer Copyright Text', 'spiderprime'),
 	     'section' => 'spiderprime_footer_buttom_area_settings',
 	     'settings' => 'spiderprime_footer_buttom_copyright_setting'
 	  ));     
@@ -503,7 +468,7 @@ add_action( 'customize_register', 'spiderprime_customize_register' );
  */
 if ( ! function_exists( 'spiderprime_customize_preview_js' ) ) {
 	function spiderprime_customize_preview_js() {
-		wp_enqueue_script( 'spiderprime_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20160215', true );
+		wp_enqueue_script( 'spiderprime_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20160215', true );
 	}
 }
 add_action( 'customize_preview_init', 'spiderprime_customize_preview_js' );
@@ -514,7 +479,7 @@ add_action( 'customize_preview_init', 'spiderprime_customize_preview_js' );
  */
 if ( ! function_exists( 'spiderprime_customizer_script' ) ) {
 	function spiderprime_customizer_script() {
-		wp_enqueue_script( 'spiderprime-scustomizer-script', get_template_directory_uri() .'/js/spiderprime_customizer.js', array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+		wp_enqueue_script( 'spiderprime-scustomizer-script', get_template_directory_uri() .'/assets/js/spiderprime_customizer.js', array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 	}
 }
 add_action( 'customize_controls_enqueue_scripts', 'spiderprime_customizer_script' );

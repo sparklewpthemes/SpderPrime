@@ -8,5 +8,5 @@
  */
 ?>
 <div class="row-fluid services-con">
-	<?php do_action('default-section'); ?>
+	<?php do_action('spiderprime-default-section'); ?>
 </div>

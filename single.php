@@ -23,7 +23,7 @@ get_header(); ?>
 	<?php do_action('spiderprime_breadcrumb'); ?>
 
 	<div class="container">
-		<div class="row-fluid blog-page">
+		<div class="row-fluid blog-page site-main">
 
 			<?php  if ($spiderprime_single_layout == 'leftsidebar') : ?>
 				<section class="span3 sidebar">

@@ -49,7 +49,12 @@ get_header(); ?>
 
 						endwhile;
 
-						spiderprime_pagination();
+							the_posts_pagination( 
+			            		array(
+								    'prev_text' => __( 'Prev', 'spiderprime' ),
+								    'next_text' => __( 'Next', 'spiderprime' ),
+								)
+				            );
 
 					else :
 

@@ -30,21 +30,23 @@
 			    <div class="container">			    
 				    	
 			    	<div class="site-branding brand">
-				    	<?php
-    						if ( function_exists( 'the_custom_logo' ) ) {
-    							the_custom_logo();
-    						}
-    					?>
-		    			<h1 class="site-title">
-		    				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		    					<?php bloginfo( 'name' ); ?>
-		    				</a>
-		    			</h1>
-			    		<?php 					    		
-			    			$description = get_bloginfo( 'description', 'display' );
-			    			if ( $description || is_customize_preview() ) { ?>
-			    			<p class="site-description"><?php echo esc_textarea( $description ); ?></p>
-		    			<?php } ?>
+				    	<div class="sp-logo">
+					    	<?php
+	    						if ( function_exists( 'the_custom_logo' ) ) {
+	    							the_custom_logo();
+	    						}
+	    					?>
+			    			<h1 class="site-title">
+			    				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			    					<?php bloginfo( 'name' ); ?>
+			    				</a>
+			    			</h1>
+				    		<?php 					    		
+				    			$description = get_bloginfo( 'description', 'display' );
+				    			if ( $description || is_customize_preview() ) { ?>
+				    			<p class="site-description"><?php echo $description; ?></p>
+			    			<?php } ?>
+			    		</div>
 			    	</div><!-- .logo-->
 					<div class="toggle-nav">
 				    	<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">

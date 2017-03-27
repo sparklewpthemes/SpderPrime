@@ -44,7 +44,7 @@ get_header(); ?>
 					            while ( $query->have_posts() ) { $query->the_post();
 					        ?>
 								<div class="span12">
-									<?php the_title( '<h1>', '</h1>' ); ?>
+									<?php the_title( '<h2>', '</h2>' ); ?>
 									<?php if( get_the_content() != "" ) { ?>
 										<?php the_content(); ?>
 									<?php } ?>

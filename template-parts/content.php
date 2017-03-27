@@ -7,13 +7,13 @@
  * @package Spider_Prime
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('blog-project '. get_post_format()); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('blog-project '. esc_attr(get_post_format())); ?>>
 	
 	<div class="post-type">
 		<?php if( get_post_format() ) { ?>
 			<span></span>
 		<?php } ?>
-		<a class="comment-number" href="<?php echo get_comments_link( $post->ID ); ?>">
+		<a class="comment-number" href="<?php echo esc_url(get_comments_link( $post->ID )); ?>">
 			<?php comments_number('0','1','%'); ?>
 		</a>
 	</div>

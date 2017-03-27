@@ -30,20 +30,17 @@
 				</div>
 			<?php } ?>
 			<h3><a href="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-			<?php if( get_the_content() != "" ) { ?>
-				<p><?php echo spiderprime_letter_count( get_the_excerpt(), 125 ); ?></p>
-			<?php } ?>
+				<p><?php echo wp_trim_words(get_the_content(), 22 ); ?></p>
 			<div class="date">
-				<span><a href="<?php the_permalink(); ?>"><?php echo get_the_date();?></a></span>
+				<span><a href="<?php the_permalink(); ?>"><?php echo the_date();?></a></span>
 				<ul class="view-com">
-					<li><a class="comments" href="<?php echo get_comments_link( $post->ID ); ?>"><?php comments_number('0','1','%'); ?></a></li>
+					<li>
+						<a class="comments" href="<?php echo esc_url(get_comments_link( $post->ID )); ?>">
+							<?php comments_number('0','1','%'); ?>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
-	<?php  } } wp_reset_query(); ?>
+	<?php  } } wp_reset_postdata(); ?>
 </div>
-<?php if(!empty($section_view_more_text)) { ?>
-	<a class="look-all" href="<?php echo $section_view_more_link ?>">
-		<?php echo $section_view_more_text; ?>
-	</a>
-<?php } ?>

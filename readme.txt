@@ -1,16 +1,16 @@
-=== Spider Prime ===
+=== SpiderPrime ===
 
 SpiderPrime is responsive multipurpose WordPress business theme. SpiderPrime is a free and elegant theme that can be used for web agency business,corporate business,personal or portfolio, photography business sites and freelancer. It comes with a clean and beautiful design, completed by the parallax background image effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. SpiderPrime is Compatible with WPML and SEO Friendly and is one of the best business themes.
 
 Contributors: sparklewpthemes
 
-Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, theme-options, featured-images, custom-header, responsive-layout
+Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, theme-options, featured-images
 
 Requires at least: 4.0
 Tested up to: 4.5.3
 Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
 == Description ==
 
@@ -47,6 +47,14 @@ The exceptions to license are as follows:
 
 * jQuery ImagesLoaded https://gist.github.com/paulirish/268257 [MIT](http://opensource.org/licenses/MIT) copyright 2010 Paul Irish
 
+* html5shiv https://github.com/afarkas/html5shiv [MIT](http://opensource.org/licenses/MIT) by @afarkas @jdalton @jon_neal @rem
+
+* respond https://github.com/scottjehl/Respond [MIT](http://opensource.org/licenses/MIT) Copyright 2011 Scott Jehl, scottjehl.com
+
+* Font-Awesome https://github.com/FortAwesome/Font-Awesome [MIT](http://opensource.org/licenses/MIT)- by @davegandy
+
+* The Font Awesome font is licensed under the SIL OFL 1.1: http://scripts.sil.org/OFL
+
 
 Image used in screenshot
 https://www.pexels.com/photo/people-apple-iphone-writing-154/ - License CC0 Public Domain
@@ -64,6 +72,10 @@ https://www.pexels.com/photo/black-and-white-city-houses-skyline-2255/ - License
 
 
 == Changelog ==
+
+= 1.0.3 =
+
+** Fixed the admin review issue.
 
 = 1.0.2 =
 

@@ -21,35 +21,27 @@
 
 					<div class="row-fluid footer-data">
 
-						<?php if(is_active_sidebar('footerone')) : ?>
-	                        <div class="span3 footerarea"> 
-	                        	<ul class="widgets">                      
-	                               <?php dynamic_sidebar('footerone') ?>
-	                            </ul>
+						<?php if(is_active_sidebar('footer-1')) : ?>
+	                        <div class="span3 footerarea">                
+	                            <?php dynamic_sidebar('footer-1') ?>
 	                        </div>
                    		<?php endif; ?>
 
-                   		<?php if(is_active_sidebar('footertwo')) : ?>
-	                        <div class="span3 footerarea">
-	                        	<ul class="widgets">                       
-	                               <?php dynamic_sidebar('footertwo') ?>
-	                            </ul>
+                   		<?php if(is_active_sidebar('footer-2')) : ?>
+	                        <div class="span3 footerarea">                
+	                            <?php dynamic_sidebar('footer-2') ?>
 	                        </div>
                    		<?php endif; ?>
 
-                   		<?php if(is_active_sidebar('footerthree')) : ?>
-	                        <div class="span3 footerarea">
-	                        	<ul class="widgets">                       
-	                               <?php dynamic_sidebar('footerthree') ?>
-	                            </ul>
+                   		<?php if(is_active_sidebar('footer-3')) : ?>
+	                        <div class="span3 footerarea">                
+	                            <?php dynamic_sidebar('footer-3') ?>
 	                        </div>
                    		<?php endif; ?>
 
-                   		<?php if(is_active_sidebar('footerfour')) : ?>
-	                        <div class="span3 footerarea">
-	                        	<ul class="widgets">                       
-	                               <?php dynamic_sidebar('footerfour') ?>
-	                            </ul>
+                   		<?php if(is_active_sidebar('footer-4')) : ?>
+	                        <div class="span3 footerarea">                
+	                            <?php dynamic_sidebar('footer-4') ?>
 	                        </div>
                    		<?php endif; ?>							
 
@@ -68,12 +60,15 @@
 						<?php endif; ?>
 					</div>
 					<div class="pull-right copyright_right">
-						<p><?php _e('Spider Prime by','spiderprime'); ?> <a href="<?php echo esc_url('http://sparklewpthemes.com/'); ?>" title="Sparkle Wp Themes" target="_blank">Sparkle Wp Themes</a></p>
+						<p><?php _e('SpiderPrime by','spiderprime'); ?> <a href="<?php echo esc_url('http://sparklewpthemes.com/'); ?>" title="<?php _e('Sparkle Themes','spiderprime'); ?>" target="_blank"><?php _e('Sparkle Themes','spiderprime'); ?></a></p>
 					</div>
 				</div>
 			</div><!-- container copyright -->
 	</footer><!--End Footer -->
 </div><!-- End Container -->
 <?php wp_footer(); ?>
+<a href="#" class="scrollup">
+	<i class="fa fa-angle-up"></i>
+</a>
 </body>
 </html>

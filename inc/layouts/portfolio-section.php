@@ -30,13 +30,8 @@
 				</div>
 			<?php } ?>		
 			<?php the_title( '<h3>', '</h3>' ); ?>
-			<?php if(get_the_content() != "" ) { ?>
-				<p><?php echo spiderprime_letter_count(get_the_excerpt(),125); ?></p>	
-			<?php } ?>
+			<p><?php echo wp_trim_words(get_the_content(), 22 ); ?></p>
 			<?php the_tags( '<ul class="project-tags"><li>', '</li><li>', '</li></ul>' ); ?>			
 		</div>
-	<?php } } wp_reset_query(); ?>
+	<?php } } wp_reset_postdata(); ?>
 </div>
-<?php if(!empty( $section_view_more_text) ) { ?>
-	<a class="look-all" href="<?php echo $section_view_more_link ?>"><?php echo $section_view_more_text; ?></a>
-<?php } ?>

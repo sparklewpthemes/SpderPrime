@@ -40,8 +40,3 @@
 	<?php } } wp_reset_query();
 	?>
 </div>
-<?php if(!empty($section_view_more_text)) { ?>
-	<a class="look-all" href="<?php echo $section_view_more_link ?>">
-		<?php echo $section_view_more_text; ?>
-	</a>
-<?php } ?>
