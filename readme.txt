@@ -73,6 +73,10 @@ https://www.pexels.com/photo/black-and-white-city-houses-skyline-2255/ - License
 
 == Changelog ==
 
+= 1.0.6 =
+
+** Remove template-blogs.php page template.
+
 = 1.0.5 =
 
 ** Fixed the translations issue.
