@@ -1,0 +1,544 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SpiderPrime\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Wed Jul 20 2016 23:45:46 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Wed Jul 20 2016 23:45:58 GMT+0545 (Nepal Standard Time)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../footer.php:67
+#, php-format
+msgid "Copyright &copy; %1$s %2$s"
+msgstr ""
+
+#: ../footer.php:71
+msgid "Spider Prime by"
+msgstr ""
+
+#: ../functions.php:50
+msgid "Primary"
+msgstr ""
+
+#: ../functions.php:112
+msgid "Left Side Widget Area"
+msgstr ""
+
+#: ../functions.php:122
+msgid "Right Side Widget Area"
+msgstr ""
+
+#: ../404.php:18 ../inc/extras.php:147
+msgid "404"
+msgstr ""
+
+#: ../404.php:19
+msgid "Wooops"
+msgstr ""
+
+#: ../404.php:20
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below ?"
+msgstr ""
+
+#: ../404.php:21
+msgid "Return to the"
+msgstr ""
+
+#: ../404.php:21
+msgid "home page"
+msgstr ""
+
+#: ../template-parts/content-search.php:41 ../template-parts/content.php:56 ..
+#: /blog-page.php:85
+msgid "Read More"
+msgstr ""
+
+#: ../template-parts/content-page.php:19 ../template-parts/content.php:46
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#: ../template-parts/content-page.php:30 ../inc/template-tags.php:71
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: ../template-parts/content.php:41
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: ../template-parts/content-none.php:21
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../comments.php:40 ../comments.php:104
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:43 ../comments.php:107
+msgid "Older Comments"
+msgstr ""
+
+#: ../comments.php:44 ../comments.php:108
+msgid "Newer Comments"
+msgstr ""
+
+#: ../comments.php:51
+msgid "comments"
+msgstr ""
+
+#: ../comments.php:59
+msgid "Leave a Reply"
+msgstr ""
+
+#: ../comments.php:60
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: ../comments.php:61
+msgid "Cancel Reply"
+msgstr ""
+
+#: ../comments.php:62
+msgid "Post Comment"
+msgstr ""
+
+#: ../comments.php:68
+msgid "Comment"
+msgstr ""
+
+#: ../comments.php:74
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: ../comments.php:80
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this "
+"account\">Log out?</a>"
+msgstr ""
+
+#: ../comments.php:87
+msgid "Your email address will not be published."
+msgstr ""
+
+#: ../comments.php:92
+#, php-format
+msgid ""
+"You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
+"and attributes: %s"
+msgstr ""
+
+#: ../comments.php:121
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:127
+msgid "Leave a Comment?"
+msgstr ""
+
+#: ../comments.php:128
+msgid "WRITE COMMENT"
+msgstr ""
+
+#. Name of the template
+msgid "BLog Page"
+msgstr ""
+
+#: ../inc/template-tags.php:28
+#, php-format
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#: ../inc/template-tags.php:33
+#, php-format
+msgctxt "post author"
+msgid "By %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
+#: ../inc/template-tags.php:50 ../inc/template-tags.php:56
+msgid ", "
+msgstr ""
+
+#: ../inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: ../inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: ../inc/template-tags.php:64
+msgid "Leave a comment"
+msgstr ""
+
+#: ../inc/template-tags.php:64
+msgid "1 Comment"
+msgstr ""
+
+#: ../inc/template-tags.php:64
+#, php-format
+msgid "% Comments"
+msgstr ""
+
+#: ../inc/class-repeater.php:115
+msgid "SpiderPrime HomePage Section"
+msgstr ""
+
+#: ../inc/class-repeater.php:121 ../inc/class-repeater.php:211 ../inc/class-
+#: repeater.php:300
+msgid "Select Section Page"
+msgstr ""
+
+#: ../inc/class-repeater.php:134 ../inc/class-repeater.php:224 ../inc/class-
+#: repeater.php:313
+msgid "Select Section Layout"
+msgstr ""
+
+#: ../inc/class-repeater.php:147 ../inc/class-repeater.php:237 ../inc/class-
+#: repeater.php:326
+msgid "Select Section Category"
+msgstr ""
+
+#: ../inc/class-repeater.php:159 ../inc/class-repeater.php:249 ../inc/class-
+#: repeater.php:338
+msgid "Section Background Image"
+msgstr ""
+
+#: ../inc/class-repeater.php:162 ../inc/class-repeater.php:252 ../inc/class-
+#: repeater.php:341
+msgid "Upload Image"
+msgstr ""
+
+#: ../inc/class-repeater.php:169 ../inc/class-repeater.php:170 ../inc/class-
+#: repeater.php:258 ../inc/class-repeater.php:259 ../inc/class-repeater.php:347 ..
+#: /inc/class-repeater.php:348
+msgid "Enter Title Text"
+msgstr ""
+
+#: ../inc/class-repeater.php:176 ../inc/class-repeater.php:177 ../inc/class-
+#: repeater.php:265 ../inc/class-repeater.php:266 ../inc/class-repeater.php:354 ..
+#: /inc/class-repeater.php:355
+msgid "Enter Short Text"
+msgstr ""
+
+#: ../inc/class-repeater.php:183 ../inc/class-repeater.php:272 ../inc/class-
+#: repeater.php:361
+msgid "Enter View More Button Text"
+msgstr ""
+
+#: ../inc/class-repeater.php:184 ../inc/class-repeater.php:190 ../inc/class-
+#: repeater.php:273 ../inc/class-repeater.php:362
+msgid "Enter View More Text"
+msgstr ""
+
+#: ../inc/class-repeater.php:189 ../inc/class-repeater.php:278 ../inc/class-
+#: repeater.php:367
+msgid "Enter View More Button Link"
+msgstr ""
+
+#: ../inc/class-repeater.php:195 ../inc/class-repeater.php:283 ../inc/class-
+#: repeater.php:374
+msgid "Delete Section Area"
+msgstr ""
+
+#: ../inc/class-repeater.php:205 ../inc/class-repeater.php:295
+msgid "HomePage Section Area"
+msgstr ""
+
+#: ../inc/class-repeater.php:279 ../inc/class-repeater.php:368
+msgid "Enter View More Link"
+msgstr ""
+
+#: ../inc/class-repeater.php:394
+msgid "Add New Section Area"
+msgstr ""
+
+#: ../inc/customizer.php:23
+msgid "Change the header settings here as you want"
+msgstr ""
+
+#: ../inc/customizer.php:25
+msgid "General Settings"
+msgstr ""
+
+#: ../inc/customizer.php:34
+msgid "Colors Settings"
+msgstr ""
+
+#: ../inc/customizer.php:39
+msgid "Manage you home slider section here as you want"
+msgstr ""
+
+#: ../inc/customizer.php:40
+msgid "Slider Section Settings"
+msgstr ""
+
+#: ../inc/customizer.php:46
+msgid "Add Slider Here"
+msgstr ""
+
+#: ../inc/customizer.php:58
+msgid "Enable or Disable Slider Section"
+msgstr ""
+
+#: ../inc/customizer.php:59 ../inc/customizer.php:348
+msgid "Choose any options as you want"
+msgstr ""
+
+#: ../inc/customizer.php:63 ../inc/customizer.php:352 ../inc/customizer.php:448
+msgid "Enable"
+msgstr ""
+
+#: ../inc/customizer.php:64 ../inc/customizer.php:353 ../inc/customizer.php:449
+msgid "Disable"
+msgstr ""
+
+#: ../inc/customizer.php:84 ../inc/customizer.php:128
+msgid "Manage HomePage Section Area"
+msgstr ""
+
+#: ../inc/customizer.php:97
+msgid "Manage you home page section here as you want"
+msgstr ""
+
+#: ../inc/customizer.php:99
+msgid "HomePage Section Settings"
+msgstr ""
+
+#: ../inc/customizer.php:105
+msgid "All HomePage Sections"
+msgstr ""
+
+#: ../inc/customizer.php:142
+msgid "Breadcrumbs Settings"
+msgstr ""
+
+#: ../inc/customizer.php:154
+msgid "Check to Disable the Breadcrumbs Menu"
+msgstr ""
+
+#: ../inc/customizer.php:169
+msgid "Breadcrumbs Background Colors"
+msgstr ""
+
+#: ../inc/customizer.php:170
+msgid ""
+"Select default breadcrumbs background color as you want Note :- if you "
+"upload the background image for breadcrumbs then background color is not "
+"working."
+msgstr ""
+
+#: ../inc/customizer.php:185
+msgid "Breadcrumbs Font Colors"
+msgstr ""
+
+#: ../inc/customizer.php:186
+msgid "Select default breadcrumbs Font color as you want"
+msgstr ""
+
+#: ../inc/customizer.php:198
+msgid "Upload Breadcrumbs Background Image"
+msgstr ""
+
+#: ../inc/customizer.php:211
+msgid "Enter Min Height For Breadcrumbs"
+msgstr ""
+
+#: ../inc/customizer.php:220
+msgid "Change the Design Settings from here as you want"
+msgstr ""
+
+#: ../inc/customizer.php:221
+msgid "Layout Settings"
+msgstr ""
+
+#: ../inc/customizer.php:229
+msgid "Page Layout Settings"
+msgstr ""
+
+#: ../inc/customizer.php:241
+msgid "Select page layout as you want"
+msgstr ""
+
+#: ../inc/customizer.php:255
+msgid "Archive Page Layout Settings"
+msgstr ""
+
+#: ../inc/customizer.php:267
+msgid "Select Category Page Layout"
+msgstr ""
+
+#: ../inc/customizer.php:281
+msgid "Single Page Layout Settings"
+msgstr ""
+
+#: ../inc/customizer.php:293
+msgid "Select Layout for Single Posts"
+msgstr ""
+
+#: ../inc/customizer.php:305
+msgid "Custom CSS Settings"
+msgstr ""
+
+#: ../inc/customizer.php:318
+msgid "Write your custom css"
+msgstr ""
+
+#: ../inc/customizer.php:328
+msgid "Footer Settings"
+msgstr ""
+
+#: ../inc/customizer.php:335
+msgid "Footer Area Settings"
+msgstr ""
+
+#: ../inc/customizer.php:347
+msgid "Enable or Disable Footer Area Section"
+msgstr ""
+
+#: ../inc/customizer.php:366
+msgid "Footer Area Background Colors"
+msgstr ""
+
+#: ../inc/customizer.php:367
+msgid "Select default footer area background color as you want"
+msgstr ""
+
+#: ../inc/customizer.php:374
+msgid "Footer Buttom Area Settings"
+msgstr ""
+
+#: ../inc/customizer.php:389
+msgid "Footer Buttom Area Background Colors"
+msgstr ""
+
+#: ../inc/customizer.php:390
+msgid "Select default footer buttom area background color as you want"
+msgstr ""
+
+#: ../inc/customizer.php:403
+msgid "Footer Bottom Left Content (Copyright Text)"
+msgstr ""
+
+#: ../inc/layouts/features-section.php:29
+msgid "More"
+msgstr ""
+
+#: ../inc/extras.php:139
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../inc/extras.php:186
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../inc/extras.php:217
+msgid "Home"
+msgstr ""
+
+#: ../inc/extras.php:233
+msgid "Archive by category"
+msgstr ""
+
+#: ../inc/extras.php:235
+msgid "Search results for"
+msgstr ""
+
+#: ../inc/extras.php:298
+msgid "Posts tagged"
+msgstr ""
+
+#: ../inc/extras.php:302
+msgid "Articles posted by "
+msgstr ""
+
+#: ../inc/extras.php:310
+msgid "Page"
+msgstr ""
+
+#. Name of the template
+msgid "Home Page"
+msgstr ""
+
+#. Name of the theme
+msgid "SpiderPrime"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://sparklewpthemes.com/themes/spiderprime/"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Spider Prime is responsive multipurpose WordPress business theme. Spider "
+"Prime is a free and elegant theme that can be used for web agency business,"
+"corporate business,personal or portfolio, photography business sites and "
+"freelancer. It comes with a clean and beautiful design, completed by the "
+"parallax background image effect, which makes it run smoothly and easily. "
+"You can simply modify everything, as the theme comes with a complex and user-"
+"friendly set of customization options. Spider Prime is Compatible with WPML "
+"and SEO Friendly and is one of the best business themes."
+msgstr ""
+
+#. Author of the theme
+msgid "Sparkle Wp Themes"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://sparklewpthemes.com/"
+msgstr ""
