@@ -1,16 +1,12 @@
-/*jshint jquery:true */
-/*global $:true */
-
 var $ = jQuery.noConflict();
-
 $(document).ready(function($) {
 	"use strict";
 
-	/* ---------------------------------------------------------------------- */
-	/*	for ie8 line
-	/* ---------------------------------------------------------------------- */
-	var dropdownMenu = $('.dropdown');
-	dropdownMenu.css('z-index', 99999);
+	// Menu Toggle
+	$('.toggle-nav').click(function(){
+	    $('.toggle-nav').toggleClass('on');
+	    $('.main-navigation').slideToggle();
+	});
 
 	/* ---------------------------------------------------------------------- */
 	/*	PrettyPhoto
@@ -96,15 +92,15 @@ $(document).ready(function($) {
 	/* ---------------------------------------------------------------------- */
 	/*	Client Slider
 	/* ---------------------------------------------------------------------- */
-		var clientSlider = $('.bxslider.clSlider');
+	var clientSlider = $('.bxslider.clSlider');
 
-		try {
+	try {
 			clientSlider.bxSlider({
 				auto: true,
 				mode: 'horizontal'
 			});
 		} catch(err) {
-		}
+	}
 	
 		
 });

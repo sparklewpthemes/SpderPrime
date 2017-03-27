@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
   });
 });
 
-function media_upload(button_class) {
+function spiderprime_media_upload(button_class) {
 
 	jQuery('body').on('click', button_class, function(e) {
 		var button_id ='#'+jQuery(this).attr('id');
@@ -23,27 +23,7 @@ function media_upload(button_class) {
 							display_field.val(attachment.sizes.full.url);
                             display_field.trigger('change');
 							break;
-						/*case 'medium':
-							display_field.val(attachment.sizes.medium.url);
-                            display_field.trigger('change');
-							break;
-						case 'thumbnail':
-							display_field.val(attachment.sizes.thumbnail.url);
-                            display_field.trigger('change');
-							break;
-						case 'spiderprime_team':
-							console.log(attachment.sizes);
-							display_field.val(attachment.sizes.spiderprime_team.url);
-                            display_field.trigger('change');
-							break
-						case 'spiderprime_services':
-							display_field.val(attachment.sizes.spiderprime_services.url);
-                            display_field.trigger('change');
-							break
-						case 'spiderprime_customers':
-							display_field.val(attachment.sizes.spiderprime_customers.url);
-                            display_field.trigger('change');
-							break;*/
+
 						default:
 							display_field.val(attachment.url);
                             display_field.trigger('change');
@@ -133,9 +113,9 @@ function spiderprime_refresh_general_control_values(){
                     "section_value" : section_value ,
                     "section_value_cat" : section_value_cat ,
                     "bg_image_url" : bg_image_url,
-                    "title_text" : escapeHtml(title_text),
-                    "short_textarea" : escapeHtml(short_textarea),
-                    "view_more_text" : escapeHtml(view_more_text),
+                    "title_text" : spiderprime_escapeHtml(title_text),
+                    "short_textarea" : spiderprime_escapeHtml(short_textarea),
+                    "view_more_text" : spiderprime_escapeHtml(view_more_text),
                     "view_more_link" : view_more_link,
                 });
             }
@@ -171,7 +151,7 @@ jQuery(document).ready(function(){
 		return false; 
 	});
 
-  media_upload('.custom_media_button_spiderprime');
+  spiderprime_media_upload('.custom_media_button_spiderprime');
   jQuery(".section_bg_media_url").live('change',function(){
       spiderprime_refresh_general_control_values();
       return false;
@@ -240,20 +220,19 @@ jQuery(document).ready(function(){
 
 });
 
-var entityMap = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': '&quot;',
-    "'": '&#39;',
-    "/": '&#x2F;',
-  };
-
-  function escapeHtml(string) {
-	  string = String(string).replace(new RegExp('\r?\n','g'), '<br />');
-	  string = String(string).replace(/\\/g,'&#92;');
-	  return String(string).replace(/[&<>"'\/]/g, function (s) {
-      	return entityMap[s];
-	  });
-	  
-  }
+function spiderprime_escapeHtml(string) {
+  var spiderprime_entityMap = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': '&quot;',
+      "'": '&#39;',
+      "/": '&#x2F;',
+    };
+  string = String(string).replace(new RegExp('\r?\n','g'), '<br />');
+  string = String(string).replace(/\\/g,'&#92;');
+  return String(string).replace(/[&<>"'\/]/g, function (s) {
+    	return spiderprime_entityMap[s];
+  });
+  
+}

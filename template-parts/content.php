@@ -68,7 +68,6 @@
 		<?php 
 			if(is_single()) {
 				
-				//the_posts_navigation();
 				the_post_navigation();
 			
 				// If comments are open or we have at least one comment, load up the comment template.

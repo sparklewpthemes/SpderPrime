@@ -129,7 +129,7 @@ function spiderprime_widgets_init() {
 	));
 
 	register_sidebar( array(
-        'name' => 'Footer Widget Area One',
+        'name'          => esc_html__( 'Footer Widget Area One', 'spiderprime' ),
         'id' => 'footerone',
         'before_widget' => '<li id="%1$s" class="widget %2$s clearfix">',
         'after_widget' => '</li>',
@@ -138,7 +138,7 @@ function spiderprime_widgets_init() {
     ));
 
     register_sidebar( array(
-        'name' => 'Footer Widget Area Two',
+        'name'          => esc_html__( 'Footer Widget Area Two', 'spiderprime' ),
         'id' => 'footertwo',
         'before_widget' => '<li id="%1$s" class="widget %2$s clearfix">',
         'after_widget' => '</li>',
@@ -147,7 +147,7 @@ function spiderprime_widgets_init() {
     ));
 
     register_sidebar( array(
-        'name' => 'Footer Widget Area Three',
+    	'name'          => esc_html__( 'Footer Widget Area Three', 'spiderprime' ),
         'id' => 'footerthree',
         'before_widget' => '<li id="%1$s" class="widget %2$s clearfix">',
         'after_widget' => '</li>',
@@ -156,7 +156,7 @@ function spiderprime_widgets_init() {
     ));
 
     register_sidebar( array(
-        'name' => 'Footer Widget Area Four',
+        'name'          => esc_html__( 'Footer Widget Area Four', 'spiderprime' ),
         'id' => 'footerfour',
         'before_widget' => '<li id="%1$s" class="widget %2$s clearfix">',
         'after_widget' => '</li>',
@@ -173,7 +173,7 @@ add_action( 'widgets_init', 'spiderprime_widgets_init' );
 function spiderprime_scripts() {
 
 	$font_args = array(
-        'family' => 'Noto+Sans:400,700',
+        'family' => 'Noto+Sans:400,700|Open+Sans:400,600,700,300',
     );
     wp_enqueue_style('google-fonts', add_query_arg($font_args, "//fonts.googleapis.com/css"));
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');

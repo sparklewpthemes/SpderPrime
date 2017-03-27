@@ -1,6 +1,9 @@
 === Spider Prime ===
 
-Contributors: automattic
+SpiderPrime is responsive multipurpose WordPress business theme. SpiderPrime is a free and elegant theme that can be used for web agency business,corporate business,personal or portfolio, photography business sites and freelancer. It comes with a clean and beautiful design, completed by the parallax background image effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. SpiderPrime is Compatible with WPML and SEO Friendly and is one of the best business themes.
+
+Contributors: sparklewpthemes
+
 Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, theme-options, featured-images, custom-header, responsive-layout
 
 Requires at least: 4.0
@@ -9,11 +12,46 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called spiderprime, or underscores.
-
 == Description ==
 
-Spider Prime is responsive multipurpose WordPress business theme. Spider Prime is a free and elegant theme that can be used for web agency business,corporate business,personal or portfolio, photography business sites and freelancer. It comes with a clean and beautiful design, completed by the parallax background image effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Spider Prime is Compatible with WPML and SEO Friendly and is one of the best business themes.
+SpiderPrime is responsive multipurpose WordPress business theme. SpiderPrime is a free and elegant theme that can be used for web agency business,corporate business,personal or portfolio, photography business sites and freelancer. It comes with a clean and beautiful design, completed by the parallax background image effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. SpiderPrime is Compatible with WPML and SEO Friendly and is one of the best business themes.
+
+
+== Translation ==
+
+SpiderPrime theme is translation ready.
+
+
+== License ==
+SpiderPrime is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2 or later.
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+SpiderPrime WordPress Theme, Copyright 2016 SparklewpThemes
+SpiderPrime is distributed under the terms of the GNU General Public License v2
+The exceptions to license are as follows:
+
+* Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* Google Fonts - Apache License, version 2.0
+
+* Bootstrap https://github.com/twbs/bootstrap [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0) Copyright 2012 Twitter, Inc
+
+* Bxslider http://bxslider.com/ [MIT](http://opensource.org/licenses/MIT) - Copyright 2013-2015 Steven Wanderski
+
+* FlexSlider https://github.com/woothemes/FlexSlider [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html) - Copyright 2012 WooThemes Tyler Smith (@mbmufffin)
+
+* prettyPhoto https://github.com/scaron/prettyphoto [GPLV2](http://www.gnu.org/licenses/gpl-2.0.html) Copyright, Stephane Caron
+
+* Parallax JS http://pixelcog.github.io/parallax.js/ [MIT](https://github.com/pixelcog/parallax.js/blob/master/LICENSE) copyright 2015 PixelCog, Inc.
+
+* jQuery ImagesLoaded https://gist.github.com/paulirish/268257 [MIT](http://opensource.org/licenses/MIT) copyright 2010 Paul Irish
+
+
+Image used in screenshot
+https://www.pexels.com/photo/people-apple-iphone-writing-154/ - License CC0 Public Domain
+https://www.pexels.com/photo/black-and-white-city-houses-skyline-2255/ - License CC0 Public Domain
+
 
 == Installation ==
     
@@ -21,68 +59,18 @@ Spider Prime is responsive multipurpose WordPress business theme. Spider Prime i
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+
 == Frequently Asked Questions ==
 
 
-== JS Files ==
-
-    Bootstrap.js : by @fat & @mdo
-    http://www.apache.org/licenses/LICENSE-2.0.txt
-    
-    BxSlider : Steven Wanderski - http://stevenwanderski.com - http://bxcreative.com 
-    WTFPL and MIT license - http://sam.zoy.org/wtfpl/
-    
-    FlexSlider : MIT license
-    Contributing author: Tyler Smith (@mbmufffin)
-    http://www.gnu.org/licenses/gpl-2.0.html
-
-    jQuery imagesLoaded : MIT licenses
-    http://desandro.mit-license.org/
-
-    prettyPhoto : GPLv2
-    Author: Stephane Caron (http://www.no-margin-for-errors.com)
-    http://www.gnu.org/licenses/gpl-2.0.html
-
-    Parallax JS : MIT Licenses
-    https://github.com/pixelcog/parallax.js/blob/master/LICENSE
-
-
-== Style Files ==
-
-    Bootstrap Responsive : by @fat & @mdo
-    http://www.apache.org/licenses/LICENSE-2.0
-    
-    Bootstrap : Steven Wanderski - http://stevenwanderski.com - http://bxcreative.com 
-    http://www.apache.org/licenses/LICENSE-2.0
-    
-    FlexSlider : MIT license
-    Contributing author: Tyler Smith (@mbmufffin)
-    http://www.gnu.org/licenses/gpl-2.0.html
-
-    BxSlider v4.0 : MIT licenses
-    Written by: Steven Wanderski, 2012
-    WTFPL and MIT license - http://sam.zoy.org/wtfpl/ 
-
-    prettyPhoto : GPLv2
-    Author: Stephane Caron (http://www.no-margin-for-errors.com)
-    http://www.gnu.org/licenses/gpl-2.0.html  
-
-
-== Images ==
-
-    All the images used are from http://pixabay.com and are fully GPL compatible.
-
-    Slider Images
-
-        http://www.pexels.com/photo/154/
-
-    Section Background Images
-
-        http://www.pexels.com/photo/2255/
-
----------------------------------------------
-
 == Changelog ==
+
+= 1.0.2 =
+
+** Fixed the missing translations strings.
+** Add the missing GPL License.
+** Fixed the menu design issue.
+
 
 = 1.0.1 =
 

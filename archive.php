@@ -50,8 +50,6 @@ get_header(); ?>
 
 						spiderprime_pagination();
 
-						//echo '<a class="load-more" href="#">Load More</a>';
-
 					else :
 
 						get_template_part( 'template-parts/content', 'none' );
@@ -70,6 +68,5 @@ get_header(); ?>
 	</div>
 </div>
 
-<?php
-get_footer();
+<?php get_footer();
 

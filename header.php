@@ -21,41 +21,40 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="container"><!--  Main Container -->			
+
+<div id="container"><!--  Main Container -->
+	
 	<header class="style2"><!-- Header -->
 	    <div class="navbar navbar-inverse navbar-fixed-top">
 		    <div class="navbar-inner">
-			    <div class="container">
-				    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					    <span class="icon-bar"></span>
-					    <span class="icon-bar"></span>
-					    <span class="icon-bar"></span>
-				    </button>
-
-				    <div class="logo brand">
+			    <div class="container">			    
+				    	
+			    	<div class="site-branding brand">
 				    	<?php
     						if ( function_exists( 'the_custom_logo' ) ) {
     							the_custom_logo();
     						}
     					?>
-				    	<div class="site-branding brand">
-				    		<?php
-					    		if ( is_front_page() && is_home() ) { ?>
-					    			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					    		<?php }else { ?>
-					    			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					    		<?php }
-					    		
-					    		$description = get_bloginfo( 'description', 'display' );
-
-					    		if ( $description || is_customize_preview() ) { ?>
-					    			<p class="site-description"><?php echo esc_textarea( $description ); ?></p>
-				    		<?php } ?>
-				    	</div>				    	
-				    </div><!-- .logo-->
-				    <div class="nav-collapse collapse">					  
-				    	<?php  wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '<ul class="nav">%3$s</ul>') ); ?>                        
-
+		    			<h1 class="site-title">
+		    				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+		    					<?php bloginfo( 'name' ); ?>
+		    				</a>
+		    			</h1>
+			    		<?php 					    		
+			    			$description = get_bloginfo( 'description', 'display' );
+			    			if ( $description || is_customize_preview() ) { ?>
+			    			<p class="site-description"><?php echo esc_textarea( $description ); ?></p>
+		    			<?php } ?>
+			    	</div><!-- .logo-->
+					<div class="toggle-nav">
+				    	<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			    		    <span class="icon-bar"></span>
+			    		    <span class="icon-bar"></span>
+			    		    <span class="icon-bar"></span>
+			    	    </button>
+			    	</div>
+				    <div class="main-navigation">			    	    
+				    	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>				  
 				    </div><!-- .nav-collapse collapse -->
 				    	
 			    </div>
