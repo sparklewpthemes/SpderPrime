@@ -284,7 +284,7 @@ add_action('add_meta_boxes', 'spiderprime_metabox_section');
 if ( ! function_exists( 'spiderprime_metabox_section' ) ) {
     function spiderprime_metabox_section(){   
         add_meta_box('spiderprime_display_layout', 
-            __( 'Display Layout Options', 'spiderprime' ), 
+            esc_html__( 'Display Layout Options', 'spiderprime' ), 
             'spiderprime_display_layout_callback', 
             array('page','post'), 
             'normal', 
@@ -296,17 +296,17 @@ if ( ! function_exists( 'spiderprime_metabox_section' ) ) {
 $spiderprime_page_layouts =array(
     'leftsidebar' => array(
         'value'     => 'leftsidebar',
-        'label'     => __( 'Left Sidebar', 'spiderprime' ),
+        'label'     => esc_html__( 'Left Sidebar', 'spiderprime' ),
         'thumbnail' => get_template_directory_uri() . '/images/left-sidebar.png',
     ),
     'rightsidebar' => array(
         'value'     => 'rightsidebar',
-        'label'     => __( 'Right (Default)', 'spiderprime' ),
+        'label'     => esc_html__( 'Right (Default)', 'spiderprime' ),
         'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png',
     ),
      'nosidebar' => array(
         'value'     => 'nosidebar',
-        'label'     => __( 'Full width', 'spiderprime' ),
+        'label'     => esc_html__( 'Full width', 'spiderprime' ),
         'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png',
     )
 );
@@ -326,7 +326,7 @@ if ( ! function_exists( 'spiderprime_display_layout_callback' ) ) {
                   foreach ($spiderprime_page_layouts as $field) {  
                   $spiderprime_page_metalayouts = esc_attr( get_post_meta( $post->ID, 'spiderprime_page_layouts', true ) ); 
                 ?>            
-                  <div class="radio-image-wrapper slidercat" id="slider-<?php echo $i; ?>" style="float:left; margin-right:30px;">
+                  <div class="radio-image-wrapper slidercat" id="slider-<?php echo intval( $i ); ?>" style="float:left; margin-right:30px;">
                     <label class="description">
                         <span>
                           <img src="<?php echo esc_url( $field['thumbnail'] ); ?>" />

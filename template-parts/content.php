@@ -53,7 +53,7 @@
 		</div><!-- .entry-content -->
 		<?php if(! is_single() ) { ?>
 			<a class="read-more" href="<?php the_permalink(); ?>">
-				<?php _e('Read More','spiderprime'); ?>
+				<?php esc_html_e('Read More','spiderprime'); ?>
 			</a>
 		<?php } ?>
 	

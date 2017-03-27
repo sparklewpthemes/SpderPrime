@@ -73,6 +73,12 @@ https://www.pexels.com/photo/black-and-white-city-houses-skyline-2255/ - License
 
 == Changelog ==
 
+= 1.0.5 =
+
+** Fixed the translations issue.
+** Fixed the escaping issue.
+** Remove the duplicate home and blog page template.
+
 = 1.0.4 =
 
 ** Fixed the review issue.

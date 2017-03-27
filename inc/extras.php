@@ -98,7 +98,7 @@ if ( ! function_exists( 'spiderprime_banner_section_breadcrumb' ) ) {
 		}
 		$breadcrumbs_settings =  "background-size:cover; color :". $breadcrumb_bg_font_color ."; ". $bg ." height:". intval( $breadcrumb_section_height ) ."px;";
 	 ?>
-		<div class="banner about-banner" style="<?php echo $breadcrumbs_settings; ?>">
+		<div class="banner about-banner" style="<?php echo esc_attr( $breadcrumbs_settings ); ?>">
 			<div class="container">
 				<?php if( is_search() ) { ?>
 					<h1 class="entry-title"><?php printf( esc_html__( 'Search Results for: %s', 'spiderprime' ), '<span style="background:#8248ac;">' . get_search_query() . '</span>' ); ?></h1>
@@ -109,7 +109,7 @@ if ( ! function_exists( 'spiderprime_banner_section_breadcrumb' ) ) {
 						}
 					?>
 				<?php }else if( is_404() ) { 
-						echo '<h1 class="entry-title">'.__('404','spiderprime').'</h1>';
+						echo '<h1 class="entry-title">'.esc_html__('404','spiderprime').'</h1>';
 						$breadcrumbs_menu = intval( get_theme_mod('spiderprime_breadcrumbs_menu', 1 ) );
 						if(!empty( $breadcrumbs_menu ) == 1 ){
 							spiderprime_breadcrumbs();
@@ -150,11 +150,11 @@ if ( ! function_exists( 'spiderprime_comment' ) ) {
                   <?php echo get_avatar($comment, $size='100'); ?>
                 </a>
                 <?php if ($comment->comment_approved == '0') : ?>
-                     <em><?php _e('Your comment is awaiting moderation.','spiderprime') ?></em>                
+                     <em><?php esc_html_e('Your comment is awaiting moderation.','spiderprime') ?></em>                
                 <?php endif; ?>
                 <div class="media-body">
                     <div>
-                        <?php printf(__('<h4 class="media-heading">%s</h4>','spiderprime'), get_comment_author_link()) ?>
+                    	<h4 class="media-heading"><?php echo esc_attr(get_comment_author()); ?></h4>
                         <div class="prorow">
                             <div class="comment-left">
                                 <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
@@ -162,7 +162,7 @@ if ( ! function_exists( 'spiderprime_comment' ) ) {
                         </div>
                     </div>
                     <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-                      <?php printf(__('%1$s at %2$s','spiderprime'), get_comment_date(),  get_comment_time()) ?>
+                      <?php printf(esc_attr__('%1$s at %2$s','spiderprime'), get_comment_date(),  get_comment_time()) ?>
                     </a>
                     <?php comment_text() ?>
                 </div>
@@ -181,7 +181,7 @@ if ( ! function_exists( 'spiderprime_breadcrumbs' ) ) {
 		global $post;
     	$showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     	$delimiter = '/';    
-    	$home = __('Home', 'spiderprime'); // text for the 'Home' link
+    	$home = esc_html__('Home', 'spiderprime'); // text for the 'Home' link
     	$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
     	$before = '<span class="current">'; // tag before the current crumb
     	$after = '</span>'; // tag after the current crumb
@@ -196,18 +196,18 @@ if ( ! function_exists( 'spiderprime_breadcrumbs' ) ) {
 	    		$thisCat = get_category( get_query_var('cat') , false);
 	    		if ($thisCat->parent != 0)
 	    			echo get_category_parents($thisCat->parent, TRUE, ' ' . esc_attr($delimiter) . ' ');
-	    		echo $before . __('Archive by category','spiderprime').' "' . single_cat_title('', false) . '"' . $after;
+	    		echo esc_html__('Archive by category','spiderprime').' "' . single_cat_title('', false) . '" ';
 	    	} elseif (is_search()) {
-	    		echo $before . __('Search results for','spiderprime'). '"' . get_search_query() . '"' . $after;
+	    		echo esc_html__('Search results for','spiderprime'). '"' . get_search_query() . '"';
 	    	} elseif (is_day()) {
 	    		echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_attr(get_the_time('Y')) . '</a> ' . esc_attr($delimiter) . ' ';
 	    		echo '<a href="' . esc_url(get_month_link(get_the_time('Y')), esc_attr(get_the_time('m'))) . '">' . esc_attr(get_the_time('F')) . '</a> ' . esc_attr($delimiter) . ' ';
-	    		echo $before . esc_attr(get_the_time('d')) . $after;
+	    		echo esc_attr(get_the_time('d'));
 	    	} elseif (is_month()) {
 	    		echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_attr(get_the_time('Y')) . '</a> ' . esc_attr($delimiter) . ' ';
-	    		echo $before . esc_attr(get_the_time('F')) . $after;
+	    		echo esc_attr(get_the_time('F'));
 	    	} elseif (is_year()) {
-	    		echo $before . esc_attr(get_the_time('Y')) . $after;
+	    		echo esc_attr(get_the_time('Y'));
 	    	} elseif (is_single() && !is_attachment()) {
 	    		
 	    		if (get_post_type() != 'post') {
@@ -222,14 +222,14 @@ if ( ! function_exists( 'spiderprime_breadcrumbs' ) ) {
 	    			$cats = get_category_parents($cat, TRUE, ' ' . esc_attr($delimiter) . ' ');
 	    			if ($showCurrent == 0)
 	    				$cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-	    			echo $cats;
+	    			echo sprintf( $cats );
 	    			if ($showCurrent == 1)
-	    				echo $before . esc_attr(get_the_title()) . $after;
+	    				echo esc_attr(get_the_title());
 	    		}
 
 	    	} elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
 	    		$post_type = get_post_type_object(get_post_type());
-	    		echo $before . esc_attr($post_type->labels->singular_name) . $after;
+	    		echo esc_attr($post_type->labels->singular_name);
 	    	} elseif (is_attachment()) {
 	    		$parent = get_post($post->post_parent);
 	    		$cat = get_the_category($parent->ID);
@@ -241,7 +241,7 @@ if ( ! function_exists( 'spiderprime_breadcrumbs' ) ) {
 	    		}
 	    	} elseif (is_page() && !$post->post_parent) {
 	    		if ($showCurrent == 1){
-	    			echo $before . esc_attr(get_the_title()) . $after;
+	    			echo esc_attr(get_the_title());
 	    		}
 	    	} elseif (is_page() && $post->post_parent) {
 	    		$parent_id = $post->post_parent;
@@ -255,7 +255,7 @@ if ( ! function_exists( 'spiderprime_breadcrumbs' ) ) {
 	    		}
 	    		$breadcrumbs = array_reverse($breadcrumbs);
 	    		for ($i = 0; $i < count($breadcrumbs); $i++) {
-	    			echo $breadcrumbs[$i];
+	    			echo sprintf( $breadcrumbs[$i] );
 	    			if ($i != count($breadcrumbs) - 1)
 	    				echo ' ' . $delimiter . ' ';
 	    		}
@@ -263,19 +263,19 @@ if ( ! function_exists( 'spiderprime_breadcrumbs' ) ) {
 	    			echo ' ' . esc_attr($delimiter) . ' ' . $before . esc_attr(get_the_title()) . $after;
 	    		}
 	    	} elseif (is_tag()) {
-	    		echo $before . __('Posts tagged','spiderprime').' "' . single_tag_title('', false) . '"' . $after;
+	    		echo esc_html__('Posts tagged','spiderprime').' "' . single_tag_title('', false) . '"';
 	    	} elseif (is_author()) {
 	    		global $author;
 	    		$userdata = get_userdata($author);
-	    		echo $before . __('Articles posted by ','spiderprime'). esc_attr($userdata->display_name) . $after;
+	    		echo esc_html__('Articles posted by ','spiderprime'). esc_attr($userdata->display_name);
 	    	} elseif (is_404()) {
-	    		echo $before . __('Error 404','spiderprime') . $after;
+	    		echo esc_html__('Error 404','spiderprime');
 	    	}
 
 	    	if (get_query_var('paged')) {
 	    		if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()){
 	    			echo ' (';
-	    			echo __('Page', 'spiderprime') . ' ' . get_query_var('paged');
+	    			echo esc_html__('Page', 'spiderprime') . ' ' . get_query_var('paged');
 	    		}
 	    		if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()){
 	    					echo ')';

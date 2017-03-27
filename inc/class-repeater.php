@@ -18,7 +18,7 @@ class spiderprime_Image_Radio_Control extends WP_Customize_Control {
                 <li style="display: inline;">
                     <label>
                         <input <?php $this->link(); ?>style = 'display:none' type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> />
-                        <img src = '<?php echo esc_html( $label ); ?>' class = '<?php echo $class; ?>' />
+                        <img src = '<?php echo esc_html( $label ); ?>' class = '<?php echo esc_attr( $class ); ?>' />
                     </label>
                 </li>
         <?php endforeach; ?>
@@ -73,7 +73,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
                 $homepage_section_page = $options['homepage_section_page'];
                     $spiderprime_pages = get_pages();
                     $sp_pages = array();
-                    $sp_pages[] = __('Select Section Page','spiderprime');
+                    $sp_pages[] = esc_html__('Select Section Page','spiderprime');
                     foreach ( $spiderprime_pages as $sp_page ) {
                        $sp_pages[$sp_page->post_title] = $sp_page->post_title;     
                     }
@@ -84,7 +84,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
 
             if(!empty($options['homepage_section_layout'])){
                 $homepage_section_layout = $options['homepage_section_layout'];
-                $section_layout = array( __('Default Section', 'spiderprime'), __('Features Section','spiderprime'), __('Portfolio Section','spiderprime'), __('Call to Action Section','spiderprime'), __('Blog Section','spiderprime'), __('Our Team Section','spiderprime'), __('Testimonial Section','spiderprime'));
+                $section_layout = array( esc_html__('Default Section', 'spiderprime'), esc_html__('Features Section','spiderprime'), esc_html__('Portfolio Section','spiderprime'), esc_html__('Call to Action Section','spiderprime'), esc_html__('Blog Section','spiderprime'), esc_html__('Our Team Section','spiderprime'), esc_html__('Testimonial Section','spiderprime'));
             } else {
                  $homepage_section_layout = false;
             }
@@ -93,7 +93,7 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
                 $homepage_section_category = $options['homepage_section_category'];
                     $spiderprime_categorys = get_categories();
                     $sp_categorys = array();
-                    $sp_categorys[] = __('Select Section Category','spiderprime');
+                    $sp_categorys[] = esc_html__('Select Section Category','spiderprime');
                     foreach ( $spiderprime_categorys as $sp_category ) {
                        $sp_categorys[$sp_category->slug] = $sp_category->name; 
                     }
@@ -412,9 +412,9 @@ class SpiderPrime_General_Repeater extends WP_Customize_Control {
                 if ( !empty($this_default) && empty($json)) {
                      
                 ?>
-                    <input type="hidden" id="spiderprime_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="spiderprime_repeater_colector" value="<?php  echo esc_textarea( json_encode($this_default )); ?>" />
+                    <input type="hidden" id="spiderprime_<?php echo esc_attr( $options['section'] ); ?>_repeater_colector" <?php $this->link(); ?> class="spiderprime_repeater_colector" value="<?php  echo esc_textarea( json_encode($this_default )); ?>" />
             <?php } else {  ?>
-                    <input type="hidden" id="spiderprime_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="spiderprime_repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>" />
+                    <input type="hidden" id="spiderprime_<?php echo esc_attr( $options['section'] ); ?>_repeater_colector" <?php $this->link(); ?> class="spiderprime_repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>" />
             <?php } ?>
             </div>
             <button type="button" class="button add_field spiderprime_general_control_new_field">

@@ -48,7 +48,7 @@ if ( post_password_required() ) {
 		<?php endif; // Check for comment navigation. ?>
 
 		<div class="comments-section">
-			<h1><?php _e('comments','spiderprime'); ?></h1>
+			<h1><?php esc_html_e('comments','spiderprime'); ?></h1>
 			 <ul class="comment-list">
 				<?php 
 					$args = array(
@@ -56,40 +56,40 @@ if ( post_password_required() ) {
 					  'id_submit'         => 'submit',
 					  'class_submit'      => 'submit',
 					  'name_submit'       => 'submit',
-					  'title_reply'       => __( 'Leave a Reply','spiderprime'),
-					  'title_reply_to'    => __( 'Leave a Reply to %s','spiderprime'),
-					  'cancel_reply_link' => __( 'Cancel Reply','spiderprime'),
-					  'label_submit'      => __( 'Post Comment','spiderprime'),
+					  'title_reply'       => esc_html__( 'Leave a Reply','spiderprime'),
+					  'title_reply_to'    => esc_html__( 'Leave a Reply to %s','spiderprime'),
+					  'cancel_reply_link' => esc_html__( 'Cancel Reply','spiderprime'),
+					  'label_submit'      => esc_html__( 'Post Comment','spiderprime'),
 					  'format'            => 'xhtml',
 					  'avatar_size'       => 64,
 					  'style'             => 'li',
 				
 					  'comment_field' =>  '<p class="comment-form-comment">
-					  <label for="comment">' . __( 'Comment', 'spiderprime' ) .
+					  <label for="comment">' . esc_html__( 'Comment', 'spiderprime' ) .
 					    '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' .
 					    '</textarea></p>',
 				
 					  'must_log_in' => '<p class="must-log-in">' .
 					    sprintf(
-					      __( 'You must be <a href="%s">logged in</a> to post a comment.','spiderprime' ),
+					      esc_attr__( 'You must be <a href="%s">logged in</a> to post a comment.','spiderprime' ),
 					      wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
 					    ) . '</p>',
 				
 					  'logged_in_as' => '<p class="logged-in-as">' .
 					    sprintf(
-					    __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>','spiderprime' ),
+					    esc_attr__( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>','spiderprime' ),
 					      admin_url( 'profile.php' ),
 					      $user_identity,
 					      wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
 					    ) . '</p>',
 				
 					  'comment_notes_before' => '<p class="comment-notes">' .
-					    __( 'Your email address will not be published.','spiderprime' ) . ( $req ? : '' ) .
+					    esc_html__( 'Your email address will not be published.','spiderprime' ) . ( $req ? : '' ) .
 					    '</p>',
 				
 					  'comment_notes_after' => '<p class="form-allowed-tags">' .
 					    sprintf(
-					      __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s','spiderprime' ),
+					      esc_attr__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s','spiderprime' ),
 					      ' <code>' . allowed_tags() . '</code>'
 					    ) . '</p>',
 					);
@@ -124,8 +124,8 @@ if ( post_password_required() ) {
 
 		$args = array(
 		  	'comment_notes_after' => '',
-		  	'title_reply'=>__( 'Leave a Comment?', 'spiderprime' ),
-			'label_submit' =>__( 'WRITE COMMENT', 'spiderprime' ),				
+		  	'title_reply'=>esc_html__( 'Leave a Comment?', 'spiderprime' ),
+			'label_submit' =>esc_html__( 'WRITE COMMENT', 'spiderprime' ),				
 			'comment_notes_before' => '',
 		);
 		

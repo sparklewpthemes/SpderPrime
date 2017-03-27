@@ -38,7 +38,7 @@ get_header(); ?>
 				);
 		?>
 		<?php if( $section_layout != 'Call to Action Section') { ?>
-			<section class="what-we-do parallax-window" <?php if( !empty( $section_bg_image ) ) { ?> data-parallax="scroll" data-image-src="<?php echo $section_bg_image; ?>" <?php } ?>>
+			<section class="what-we-do parallax-window" <?php if( !empty( $section_bg_image ) ) { ?> data-parallax="scroll" data-image-src="<?php echo esc_url( $section_bg_image ); ?>" <?php } ?>>
 				<div class="container">
 					<?php if( !empty( $page->ID ) ) { ?>
 						<div class="row-fluid definition">

@@ -75,7 +75,7 @@ if(!empty($spiderprime_page_layout) && $spiderprime_page_layout == 'rightsidebar
 									</div><!-- .entry-content -->
 									<?php if(!is_single()) : ?>
 										<a class="read-more" href="<?php the_permalink(); ?>">
-											<?php _e('Read More','spiderprime'); ?>
+											<?php esc_html_e('Read More','spiderprime'); ?>
 										</a>
 									<?php endif; ?>
 								
@@ -95,8 +95,8 @@ if(!empty($spiderprime_page_layout) && $spiderprime_page_layout == 'rightsidebar
 
 							the_posts_pagination( 
 			            		array(
-								    'prev_text' => __( 'Prev', 'spiderprime' ),
-								    'next_text' => __( 'Next', 'spiderprime' ),
+								    'prev_text' => esc_html__( 'Prev', 'spiderprime' ),
+								    'next_text' => esc_html__( 'Next', 'spiderprime' ),
 								)
 				            );
 

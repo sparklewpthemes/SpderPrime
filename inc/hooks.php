@@ -42,7 +42,7 @@ if(!function_exists('spiderprime_features_section')){
 					<?php the_title( '<h2>', '</h2>' ); ?>				
 					<p><?php echo wp_trim_words(get_the_content(), 22 ); ?></p>
 					<a class="more" href="<?php the_permalink(); ?>">
-						<?php _e('More','spiderprime'); ?>
+						<?php esc_html_e('More','spiderprime'); ?>
 					</a>
 				</article>
 		<?php } } wp_reset_postdata(); ?>
@@ -65,13 +65,8 @@ if(!function_exists('spiderprime_calltoaction_section')){
 		            $query = new WP_Query( 'page_id='.$page_id );
 		            while ( $query->have_posts() ) { $query->the_post();
 		        ?>
-		        <?php the_title( '<h1>', '</h1>' ); ?>
-					<?php
-						$content = substr( get_the_content(),0, 190) ;
-						$content = apply_filters('the_content', $content);
-						$content = str_replace(']]>', ']]>', $content);
-						echo $content;
-					?>
+		        	<?php the_title( '<h1>', '</h1>' ); ?>
+					<?php the_content(); ?>
 				<?php } wp_reset_postdata(); ?>			
 			</div>
 		</div>
@@ -246,7 +241,7 @@ if(!function_exists('spiderprime_testimonial_section')){
 						$i = 0;
 						while($query->have_posts()) { $query->the_post();
 				?>
-					<a data-slide-index="<?php echo $i; ?>" href="<?php the_permalink(); ?>">
+					<a data-slide-index="<?php echo intval( $i ); ?>" href="<?php the_permalink(); ?>">
 						<?php the_post_thumbnail( array(80,80) ); ?>
 					</a>
 				<?php $i++; } } wp_reset_postdata(); ?>

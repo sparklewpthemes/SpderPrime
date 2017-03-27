@@ -53,12 +53,6 @@
 	    } );
     } );
     
-    wp.customize("spiderprime_footer_buttom_copyright_setting", function(value) {
-        value.bind(function(to) {
-            $(".copyright_left p").html(to);
-        } );
-    });
-    
     
     // Breadcrumbs Settings
     

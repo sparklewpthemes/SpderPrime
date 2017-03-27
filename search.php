@@ -49,8 +49,8 @@ get_header(); ?>
 
 							the_posts_pagination( 
 			            		array(
-								    'prev_text' => __( 'Prev', 'spiderprime' ),
-								    'next_text' => __( 'Next', 'spiderprime' ),
+								    'prev_text' => esc_html__( 'Prev', 'spiderprime' ),
+								    'next_text' => esc_html__( 'Next', 'spiderprime' ),
 								)
 				            );
 

@@ -20,24 +20,24 @@ function spiderprime_customize_register( $wp_customize ) {
 	**/
 	$wp_customize->add_panel('spiderprime_general_settings', array(
 	  'capabitity' => 'edit_theme_options',
-	  'description' => __('Change the header settings here as you want', 'spiderprime'),
+	  'description' => esc_html__('Change the header settings here as you want', 'spiderprime'),
 	  'priority' => 5,
-	  'title' => __('General Settings', 'spiderprime')
+	  'title' => esc_html__('General Settings', 'spiderprime')
 	));
 
 	// Header Logo Section
 	$wp_customize->get_section('title_tagline' )->panel = 'spiderprime_general_settings';
-	$wp_customize->get_section('title_tagline' )->title = __( 'Logo/Site Title/Favicon','spiderprime' );
+	$wp_customize->get_section('title_tagline' )->title = esc_html__( 'Logo/Site Title/Favicon','spiderprime' );
 	$wp_customize->get_section('title_tagline' )->priority = 0;
 	$wp_customize->get_section('background_image' )->panel = 'spiderprime_general_settings';
 	$wp_customize->get_section('colors' )->panel = 'spiderprime_general_settings';
-	$wp_customize->get_section('colors')->title = __( 'Themes Colors','spiderprime' );      
+	$wp_customize->get_section('colors')->title = esc_html__( 'Themes Colors','spiderprime' );      
 
 	// Main Slider Settings
 	$wp_customize->add_section('spiderprime_homepage_slider_setting', array(
 	  'priority' => 6,
-	  'title' => __('Slider Settings', 'spiderprime'),
-	  'description' => __('Manage you home slider section here as you want', 'spiderprime'),
+	  'title' => esc_html__('Slider Settings', 'spiderprime'),
+	  'description' => esc_html__('Manage you home slider section here as you want', 'spiderprime'),
 	));
 
 		$wp_customize->add_setting('spiderprime_slider_section_options', array(
@@ -48,12 +48,12 @@ function spiderprime_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control('spiderprime_slider_section_options', array(
 		 'type' => 'radio',
-		 'label' => __('Enable/Disable Slider Section', 'spiderprime'),
+		 'label' => esc_html__('Enable/Disable Slider Section', 'spiderprime'),
 		 'section' => 'spiderprime_homepage_slider_setting',
 		 'setting' => 'spiderprime_slider_section_options',
 		 'choices' => array(
-		    'enable' => __('Enable', 'spiderprime'),
-		    'disable' => __('Disable', 'spiderprime'),
+		    'enable' => esc_html__('Enable', 'spiderprime'),
+		    'disable' => esc_html__('Disable', 'spiderprime'),
 		)));
 
 		/* Main Slider Category */
@@ -63,7 +63,7 @@ function spiderprime_customize_register( $wp_customize ) {
 		) );
 
 		$wp_customize->add_control( new Spiderprime_Category_Dropdown( $wp_customize, 'spiderprime_slider_team_id', array(
-		    'label' => __( 'Select Slide Category', 'spiderprime' ),
+		    'label' => esc_html__( 'Select Slide Category', 'spiderprime' ),
 		    'section' => 'spiderprime_homepage_slider_setting',
 			'priority' => 30,
 		) ) );
@@ -72,8 +72,8 @@ function spiderprime_customize_register( $wp_customize ) {
 	// Start of the Design Options
 	$wp_customize->add_section('spiderprime_homepage_section_setting', array(
 	  'priority' => 7,
-	  'title' => __('Configer HomePage Settings', 'spiderprime'),
-	  'description' => __('Manage you home page section here as you want', 'spiderprime'),
+	  'title' => esc_html__('Configure HomePage Settings', 'spiderprime'),
+	  'description' => esc_html__('Manage you home page section here as you want', 'spiderprime'),
 	));		
 
 		/* Services content */
@@ -105,7 +105,7 @@ function spiderprime_customize_register( $wp_customize ) {
 
 	// Breadcrumbs Settings
 	$wp_customize->add_section('spiderprime_breadcrumbs_section', array(
-	  'title' => __('Breadcrumbs Settings', 'spiderprime'),
+	  'title' => esc_html__('Breadcrumbs Settings', 'spiderprime'),
 	  'priority' => 8,
 	));
 
@@ -117,7 +117,7 @@ function spiderprime_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control('spiderprime_breadcrumbs_menu', array(
 		 'type' => 'checkbox',
-		 'label' => __('Check to Disable the Breadcrumbs Menu', 'spiderprime'),
+		 'label' => esc_html__('Check to Disable the Breadcrumbs Menu', 'spiderprime'),
 		 'section' => 'spiderprime_breadcrumbs_section',
 		 'settings' => 'spiderprime_breadcrumbs_menu'
 		));
@@ -132,8 +132,8 @@ function spiderprime_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control('spiderprime_breadcrumbs_background_color', array(
 			 'type'         => 'color',
-			 'label'        => __('Breadcrumbs Background Colors','spiderprime'),
-			 'description'  => __('Select default breadcrumbs background color as you want Note :- if you upload the background image for breadcrumbs then background color is not working.', 'spiderprime'),
+			 'label'        => esc_html__('Breadcrumbs Background Colors','spiderprime'),
+			 'description'  => esc_html__('Select default breadcrumbs background color as you want Note :- if you upload the background image for breadcrumbs then background color is not working.', 'spiderprime'),
 			 'section'      => 'spiderprime_breadcrumbs_section',
 		));
 
@@ -148,8 +148,8 @@ function spiderprime_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control('spiderprime_breadcrumbs_font_color', array(
 		 'type'         => 'color',
-		 'label'        => __('Breadcrumbs Font Colors','spiderprime'),
-		 'description'  => __('Select default breadcrumbs Font color as you want', 'spiderprime'),
+		 'label'        => esc_html__('Breadcrumbs Font Colors','spiderprime'),
+		 'description'  => esc_html__('Select default breadcrumbs Font color as you want', 'spiderprime'),
 		 'section'      => 'spiderprime_breadcrumbs_section',
 		));
 
@@ -161,7 +161,7 @@ function spiderprime_customize_register( $wp_customize ) {
 		));
 
 		$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'spiderprime_breadcrumbs_bg_image', array(
-			 'label' => __('Upload Breadcrumbs Background Image', 'spiderprime'),
+			 'label' => esc_html__('Upload Breadcrumbs Background Image', 'spiderprime'),
 			 'section' => 'spiderprime_breadcrumbs_section',
 			 'setting' => 'spiderprime_breadcrumbs_bg_image'
 		)));	
@@ -174,7 +174,7 @@ function spiderprime_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control('spiderprime_breadcrumbs_min_height_options', array(
 		  'type' => 'number',
-		  'label' => __('Enter Min Height For Breadcrumbs', 'spiderprime'),
+		  'label' => esc_html__('Enter Min Height For Breadcrumbs', 'spiderprime'),
 		  'section' => 'spiderprime_breadcrumbs_section',
 		  'settings' => 'spiderprime_breadcrumbs_min_height_options'
 		));
@@ -183,14 +183,14 @@ function spiderprime_customize_register( $wp_customize ) {
 	// Start of the Design Options
 	$wp_customize->add_panel('spiderprime_design_options', array(
 	  'capabitity' => 'edit_theme_options',
-	  'description' => __('Change the Design Settings from here as you want', 'spiderprime'),
-	  'title' => __('Layout Settings', 'spiderprime'),
+	  'description' => esc_html__('Change the Design Settings from here as you want', 'spiderprime'),
+	  'title' => esc_html__('Layout Settings', 'spiderprime'),
 	  'priority' => 9,
 	));
 		// Archive or Category page Layout only
 		$wp_customize->add_section('spiderprime_archive_page_layout_setting', array(
 		  'priority' => 5,
-		  'title' => __('Archive Page Layout Settings', 'spiderprime'),
+		  'title' => esc_html__('Archive Page Layout Settings', 'spiderprime'),
 		  'panel'=> 'spiderprime_design_options'
 		));
 
@@ -202,7 +202,7 @@ function spiderprime_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control(new spiderprime_Image_Radio_Control( $wp_customize, 'spiderprime_archive_page_layout', array(
 		  'type' => 'radio',
-		  'label' => __('Select Category Page Layout', 'spiderprime'),
+		  'label' => esc_html__('Select Category Page Layout', 'spiderprime'),
 		  'section' => 'spiderprime_archive_page_layout_setting',
 		  'settings' => 'spiderprime_archive_page_layout',
 		  'choices' => array( 
@@ -215,14 +215,14 @@ function spiderprime_customize_register( $wp_customize ) {
 	// Start Footer Section here      
 	$wp_customize->add_panel('spiderprime_footer_settings', array(
 	  'priority' => 11,
-	  'title' => __('Footer Settings', 'spiderprime'),
+	  'title' => esc_html__('Footer Settings', 'spiderprime'),
 	  'capability' => 'edit_theme_options',
 	));
 
 	  // Footer Area One Settings
 	  $wp_customize->add_section('spiderprime_footer_area_settings', array(
 	     'priority' => 5,
-	     'title' => __('Footer Area Settings', 'spiderprime'),
+	     'title' => esc_html__('Footer Area Settings', 'spiderprime'),
 	     'panel'=> 'spiderprime_footer_settings'
 	  ));
 
@@ -234,13 +234,13 @@ function spiderprime_customize_register( $wp_customize ) {
 
 	  $wp_customize->add_control('spiderprime_footer_area_enable_disable_section', array(
 	     'type' => 'radio',
-	     'label' => __('Enable or Disable Footer Area Section', 'spiderprime'),
+	     'label' => esc_html__('Enable or Disable Footer Area Section', 'spiderprime'),
 	     'description' => __('Choose any options as you want','spiderprime'),
 	     'section' => 'spiderprime_footer_area_settings',
 	     'setting' => 'spiderprime_footer_area_enable_disable_section',
 	     'choices' => array(
-	        'enable' => __('Enable', 'spiderprime'),
-	        'disable' => __('Disable', 'spiderprime'),
+	        'enable' => esc_html__('Enable', 'spiderprime'),
+	        'disable' => esc_html__('Disable', 'spiderprime'),
 	  )));
 
 	  $wp_customize->add_setting('spiderprime_footer_area_background_color', array(
@@ -253,15 +253,15 @@ function spiderprime_customize_register( $wp_customize ) {
 
 	  $wp_customize->add_control('spiderprime_footer_area_background_color', array(
 	     'type'         => 'color',
-	     'label'        => __('Footer Area Background Colors','spiderprime'),
-	     'description'  => __('Select default footer area background color as you want', 'spiderprime'),
+	     'label'        => esc_html__('Footer Area Background Colors','spiderprime'),
+	     'description'  => esc_html__('Select default footer area background color as you want', 'spiderprime'),
 	     'section'      => 'spiderprime_footer_area_settings',
 	  ));
 
 	  // Sub Footer Area Settings
 	  $wp_customize->add_section('spiderprime_footer_buttom_area_settings', array(
 	     'priority' => 5,
-	     'title' => __('Footer Buttom Area Settings', 'spiderprime'),
+	     'title' => esc_html__('Footer Buttom Area Settings', 'spiderprime'),
 	     'panel'=> 'spiderprime_footer_settings'
 	  ));
 	 
@@ -276,27 +276,12 @@ function spiderprime_customize_register( $wp_customize ) {
 
 	  $wp_customize->add_control('spiderprime_footer_buttom_area_background_color', array(
 	     'type'         => 'color',
-	     'label'        => __('Footer Buttom Area Background Colors','spiderprime'),
-	     'description'  => __('Select default footer buttom area background color as you want', 'spiderprime'),
+	     'label'        => esc_html__('Footer Buttom Area Background Colors','spiderprime'),
+	     'description'  => esc_html__('Select default footer buttom area background color as you want', 'spiderprime'),
 	     'section'      => 'spiderprime_footer_buttom_area_settings',
 	  ));	      
 
-	  $wp_customize->add_setting('spiderprime_footer_buttom_copyright_setting', array(
-	     'default' => '',
-	     'capability' => 'edit_theme_options',
-	     'sanitize_callback' => 'spiderprime_text_sanitize', //done
-	     'transport'         => 'postMessage',
-	  ));
-
-	  $wp_customize->add_control('spiderprime_footer_buttom_copyright_setting', array(
-	     'type' => 'textarea',
-	     'label' => __('Footer Copyright Text', 'spiderprime'),
-	     'section' => 'spiderprime_footer_buttom_area_settings',
-	     'settings' => 'spiderprime_footer_buttom_copyright_setting'
-	  ));     
-
-	// End footer section here	   
-	    
+	// End footer section here	
 	
 	// Text Sanitization
 	function spiderprime_text_sanitize( $input ) {
@@ -335,8 +320,8 @@ function spiderprime_customize_register( $wp_customize ) {
 	// radio button yes/no sanitization
 	function spiderprime_enable_disable_sanitize($input) {
 	   $valid_keys = array(
-	     'enable'=>__('Enable', 'spiderprime'),
-	     'disable'=>__('Disable', 'spiderprime')
+	     'enable'=> esc_html__('Enable', 'spiderprime'),
+	     'disable'=> esc_html__('Disable', 'spiderprime')
 	   );
 	   if ( array_key_exists( $input, $valid_keys ) ) {
 	      return $input;
