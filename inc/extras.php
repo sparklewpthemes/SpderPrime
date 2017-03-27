@@ -88,11 +88,11 @@ add_action('spiderprime_slider','spiderprime_slider_section');
 if ( ! function_exists( 'spiderprime_banner_section_breadcrumb' ) ) {
 	function spiderprime_banner_section_breadcrumb(){
 		$breadcrumb_bg_img = esc_url( get_theme_mod('spiderprime_breadcrumbs_bg_image') );
-		$breadcrumb_bg_color = wp_filter_nohtml_kses(get_theme_mod('spiderprime_breadcrumbs_background_color','#8248ac'));
+		$breadcrumb_bg_color = esc_attr(get_theme_mod('spiderprime_breadcrumbs_background_color','#8248ac'));
 		$breadcrumb_bg_font_color = esc_attr(get_theme_mod('spiderprime_breadcrumbs_font_color','#fff'));
 		$breadcrumb_section_height = intval(get_theme_mod('spiderprime_breadcrumbs_min_height_options','250'));
 		if(!empty($breadcrumb_bg_img)) {
-			$bg = "background:url(".$breadcrumb_bg_img.");";
+			$bg = "background:url(".esc_url( $breadcrumb_bg_img ).");";
 		}else {
 			$bg = "background:".$breadcrumb_bg_color.";";
 		}
@@ -147,7 +147,7 @@ if ( ! function_exists( 'spiderprime_comment' ) ) {
         <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
             <div class="comment-wrapper media" id="comment-<?php comment_ID(); ?>">
                 <a href="javascript();" class="pull-left">
-                  <?php echo get_avatar($comment,$size='100'); ?>
+                  <?php echo get_avatar($comment, $size='100'); ?>
                 </a>
                 <?php if ($comment->comment_approved == '0') : ?>
                      <em><?php _e('Your comment is awaiting moderation.','spiderprime') ?></em>                
@@ -248,7 +248,7 @@ if ( ! function_exists( 'spiderprime_breadcrumbs' ) ) {
 	    		$breadcrumbs = array();
 	    		while ($parent_id) {
 	    			if(!empty($parent_id)){
-		    			$page = (object)get_pages($parent_id)[0];
+		    			$page = (object) get_pages($parent_id)[0];
 		    			$breadcrumbs[] = '<a href="' . esc_url( get_permalink($page->ID) ) . '">' . esc_attr(get_the_title($page->ID)) . '</a>';
 		    			$parent_id = $page->post_parent;
 		    		}
@@ -286,13 +286,3 @@ if ( ! function_exists( 'spiderprime_breadcrumbs' ) ) {
 		}
 	}
 }
-
-/**
- * Spider Prime default layout seciton action
-*/
-if ( ! function_exists( 'spiderprime_default_section' ) ) {
-	function spiderprime_default_section(){
-		echo '<div class="spiderprime-default-section"></div>';
-	}
-}
-add_action('spiderprime-default-section','spiderprime_default_section');

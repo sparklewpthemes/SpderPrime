@@ -4,7 +4,7 @@ SpiderPrime is responsive multipurpose WordPress business theme. SpiderPrime is 
 
 Contributors: sparklewpthemes
 
-Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, theme-options, featured-images
+Tags: left-sidebar, right-sidebar, theme-options, featured-images, custom-logo, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.5.3
@@ -72,6 +72,10 @@ https://www.pexels.com/photo/black-and-white-city-houses-skyline-2255/ - License
 
 
 == Changelog ==
+
+= 1.0.4 =
+
+** Fixed the review issue.
 
 = 1.0.3 =
 

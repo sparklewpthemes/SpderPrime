@@ -155,9 +155,7 @@ jQuery(document).ready(function(){
   jQuery(".section_bg_media_url").live('change',function(){
       spiderprime_refresh_general_control_values();
       return false;
-  });
-
-	
+  });	
 
 	jQuery(".spiderprime_general_control_new_field").on("click",function(){
 	 
@@ -208,7 +206,6 @@ jQuery(document).ready(function(){
   jQuery("#customize-theme-controls").on('keyup', '.spiderprime_view_more_button_link',function(){
     spiderprime_refresh_general_control_values();
   });
-
 
 	/*Drag and drop to change icons order*/
 	

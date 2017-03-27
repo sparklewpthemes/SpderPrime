@@ -14,7 +14,7 @@
 
 get_header(); 
 
-$spiderprime_page_layout = esc_attr(get_theme_mod('spiderprime_page_layout','rightsidebar'));
+$spiderprime_page_layout = esc_attr( get_post_meta($post->ID, 'spiderprime_page_layouts', true) );
 if(!empty($spiderprime_page_layout) && $spiderprime_page_layout == 'rightsidebar' || $spiderprime_page_layout == 'leftsidebar' ) {
 	$spiderprime_col = 9;
 }else if(!empty($spiderprime_page_layout) && $spiderprime_page_layout == 'nosidebar' ){

@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <?php
-	$spiderprime_page_layout = esc_attr(get_theme_mod('spiderprime_page_layout','rightsidebar'));
+	$spiderprime_page_layout = esc_attr(get_theme_mod('spiderprime_archive_page_layout','rightsidebar'));
 	if(!empty($spiderprime_page_layout) && $spiderprime_page_layout == 'rightsidebar' || $spiderprime_page_layout == 'leftsidebar' ) {
 		$spiderprime_col = 9;
 	}else if(!empty($spiderprime_page_layout) && $spiderprime_page_layout == 'nosidebar' ){
@@ -64,7 +64,7 @@ get_header(); ?>
 
 				<?php  if ($spiderprime_page_layout == 'rightsidebar') : ?>
 					<section class="span3 sidebar">
-						<?php get_sidebar('right'); ?>
+						<?php get_sidebar(); ?>
 					</section> <!-- .span3 -->
 				<?php endif; ?>
 

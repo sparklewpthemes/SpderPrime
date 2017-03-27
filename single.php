@@ -7,10 +7,9 @@
  * @package Spider_Prime
  */
 
-get_header(); ?>
+get_header(); 
 
-<?php
-	$spiderprime_single_layout = esc_attr(get_theme_mod('spiderprime_single_posts_layout','rightsidebar'));
+	$spiderprime_single_layout = esc_attr( get_post_meta($post->ID, 'spiderprime_page_layouts', true) );
 	if(!empty($spiderprime_single_layout) && $spiderprime_single_layout == 'rightsidebar' || $spiderprime_single_layout == 'leftsidebar' ) {
 		$spiderprime_col = 9;
 	}else if(!empty($spiderprime_single_layout) && $spiderprime_single_layout == 'nosidebar' ){
@@ -43,7 +42,7 @@ get_header(); ?>
 
 			<?php  if ($spiderprime_single_layout == 'rightsidebar') : ?>
 				<section class="span3 sidebar">						
-					<?php get_sidebar('right'); ?>	
+					<?php get_sidebar(); ?>	
 				</section> <!-- .span3 -->
 			<?php endif; ?>
 

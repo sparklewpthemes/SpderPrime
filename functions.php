@@ -83,10 +83,14 @@ if ( ! function_exists( 'spiderprime_setup' ) ) {
 
 		/*
 		 * Enable support for custom logo.
-		 */
-		add_image_size( 'spiderprime-logo', 168, 48 );
-		add_theme_support( 'custom-logo', array( 'size' => 'spiderprime-logo' ) );
-
+		*/
+		add_theme_support( 'custom-logo', array(
+			'height'      => 48,
+			'width'       => 168,
+			'flex-height' => true,
+			'flex-width'  => true,
+			'header-text' => array( '.site-title', '.site-description' ),
+		) );
 	}
 }
 add_action( 'after_setup_theme', 'spiderprime_setup' );
@@ -244,11 +248,6 @@ add_action( 'admin_enqueue_scripts', 'spiderprime_admin_styles', 10 );
 
 
 /**
- * Implement the Custom Header feature.
-*/
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
 */
 require get_template_directory() . '/inc/template-tags.php';
@@ -274,6 +273,102 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/class-repeater.php';
 
 /**
- * Load Dynamic Css file
+ * Load main hooks file
 */
-require get_template_directory() . '/inc/dynamic-css.php';
+require get_template_directory() . '/inc/hooks.php';
+
+/**
+ * Page and Post Page Display Layout Metabox function
+*/
+add_action('add_meta_boxes', 'spiderprime_metabox_section');
+if ( ! function_exists( 'spiderprime_metabox_section' ) ) {
+    function spiderprime_metabox_section(){   
+        add_meta_box('spiderprime_display_layout', 
+            __( 'Display Layout Options', 'spiderprime' ), 
+            'spiderprime_display_layout_callback', 
+            array('page','post'), 
+            'normal', 
+            'high'
+        );
+    }
+}
+
+$spiderprime_page_layouts =array(
+    'leftsidebar' => array(
+        'value'     => 'leftsidebar',
+        'label'     => __( 'Left Sidebar', 'spiderprime' ),
+        'thumbnail' => get_template_directory_uri() . '/images/left-sidebar.png',
+    ),
+    'rightsidebar' => array(
+        'value'     => 'rightsidebar',
+        'label'     => __( 'Right (Default)', 'spiderprime' ),
+        'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png',
+    ),
+     'nosidebar' => array(
+        'value'     => 'nosidebar',
+        'label'     => __( 'Full width', 'spiderprime' ),
+        'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png',
+    )
+);
+
+/**
+ * Function for Page layout meta box
+*/
+if ( ! function_exists( 'spiderprime_display_layout_callback' ) ) {
+    function spiderprime_display_layout_callback(){
+        global $post, $spiderprime_page_layouts;
+        wp_nonce_field( basename( __FILE__ ), 'spiderprime_settings_nonce' ); ?>
+        <table>
+            <tr>
+              <td>            
+                <?php
+                  $i = 0;  
+                  foreach ($spiderprime_page_layouts as $field) {  
+                  $spiderprime_page_metalayouts = esc_attr( get_post_meta( $post->ID, 'spiderprime_page_layouts', true ) ); 
+                ?>            
+                  <div class="radio-image-wrapper slidercat" id="slider-<?php echo $i; ?>" style="float:left; margin-right:30px;">
+                    <label class="description">
+                        <span>
+                          <img src="<?php echo esc_url( $field['thumbnail'] ); ?>" />
+                        </span></br>
+                        <input type="radio" name="spiderprime_page_layouts" value="<?php echo esc_attr( $field['value'] ); ?>" <?php checked( esc_html( $field['value'] ), 
+                            $spiderprime_page_metalayouts ); if( empty( $spiderprime_page_metalayouts ) && esc_html( $field['value'] ) =='rightsidebar' ){ echo "checked='checked'";  } ?>/>
+                         <?php echo esc_html( $field['label'] ); ?>
+                    </label>
+                  </div>
+                <?php  $i++; }  ?>
+              </td>
+            </tr>            
+        </table>
+    <?php
+    }
+}
+
+/**
+ * Save the custom metabox data
+*/
+if ( ! function_exists( 'spiderprime_save_page_settings' ) ) {
+    function spiderprime_save_page_settings( $post_id ) { 
+        global $spiderprime_page_layouts, $post; 
+        if ( !isset( $_POST[ 'spiderprime_settings_nonce' ] ) || !wp_verify_nonce( $_POST[ 'spiderprime_settings_nonce' ], basename( __FILE__ ) ) )
+            return;
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)  
+            return;        
+        if ('page' == $_POST['post_type']) {  
+            if (!current_user_can( 'edit_page', $post_id ) )  
+                return $post_id;  
+        } elseif (!current_user_can( 'edit_post', $post_id ) ) {  
+                return $post_id;  
+        }    
+        foreach ($spiderprime_page_layouts as $field) {  
+            $old = esc_attr( get_post_meta( $post_id, 'spiderprime_page_layouts', true) ); 
+            $new = sanitize_text_field($_POST['spiderprime_page_layouts']);
+            if ($new && $new != $old) {  
+                update_post_meta($post_id, 'spiderprime_page_layouts', $new);  
+            } elseif ('' == $new && $old) {  
+                delete_post_meta($post_id,'spiderprime_page_layouts', $old);  
+            } 
+         } 
+    }
+}
+add_action('save_post', 'spiderprime_save_page_settings');

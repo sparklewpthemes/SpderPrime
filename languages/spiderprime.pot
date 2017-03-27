@@ -1,115 +1,48 @@
-# Loco Gettext template
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SpiderPrime\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul 20 2016 23:45:46 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Wed Jul 20 2016 23:45:58 GMT+0545 (Nepal Standard Time)\n"
+"POT-Creation-Date: 2016-11-04 19:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
 "Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: ..\n"
-"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
-"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
-"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
-"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
-"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
-"X-Generator: Loco - https://localise.biz/"
+"X-Generator: Loco https://localise.biz/"
 
-#: ../footer.php:67
-#, php-format
-msgid "Copyright &copy; %1$s %2$s"
-msgstr ""
-
-#: ../footer.php:71
-msgid "Spider Prime by"
-msgstr ""
-
-#: ../functions.php:50
-msgid "Primary"
-msgstr ""
-
-#: ../functions.php:112
-msgid "Left Side Widget Area"
-msgstr ""
-
-#: ../functions.php:122
-msgid "Right Side Widget Area"
-msgstr ""
-
-#: ../404.php:18 ../inc/extras.php:147
+#: 404.php:18 inc/extras.php:112
 msgid "404"
 msgstr ""
 
-#: ../404.php:19
+#: 404.php:19
 msgid "Wooops"
 msgstr ""
 
-#: ../404.php:20
+#: 404.php:20
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below ?"
 msgstr ""
 
-#: ../404.php:21
-msgid "Return to the"
+#. Name of the template
+#. Name of the template
+#: 404.php:23
+msgid "Home Page"
 msgstr ""
 
-#: ../404.php:21
-msgid "home page"
+#: archive.php:53 index.php:53 search.php:52 template-blogs.php:98
+msgid "Prev"
 msgstr ""
 
-#: ../template-parts/content-search.php:41 ../template-parts/content.php:56 ..
-#: /blog-page.php:85
-msgid "Read More"
+#: archive.php:54 index.php:54 search.php:53 template-blogs.php:99
+msgid "Next"
 msgstr ""
 
-#: ../template-parts/content-page.php:19 ../template-parts/content.php:46
-msgid "Pages:"
-msgstr ""
-
-#. translators: %s: Name of current post
-#. translators: %s: Name of current post
-#: ../template-parts/content-page.php:30 ../inc/template-tags.php:71
-#, php-format
-msgid "Edit %s"
-msgstr ""
-
-#: ../template-parts/content.php:41
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: ../template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: ../template-parts/content-none.php:21
-#, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: ../template-parts/content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: ../template-parts/content-none.php:31
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#: ../comments.php:31
+#: comments.php:31
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -117,426 +50,540 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:40 ../comments.php:104
+#: comments.php:40 comments.php:104
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:43 ../comments.php:107
+#: comments.php:43 comments.php:107
 msgid "Older Comments"
 msgstr ""
 
-#: ../comments.php:44 ../comments.php:108
+#: comments.php:44 comments.php:108
 msgid "Newer Comments"
 msgstr ""
 
-#: ../comments.php:51
+#: comments.php:51
 msgid "comments"
 msgstr ""
 
-#: ../comments.php:59
+#: comments.php:59
 msgid "Leave a Reply"
 msgstr ""
 
-#: ../comments.php:60
+#: comments.php:60
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: ../comments.php:61
+#: comments.php:61
 msgid "Cancel Reply"
 msgstr ""
 
-#: ../comments.php:62
+#: comments.php:62
 msgid "Post Comment"
 msgstr ""
 
-#: ../comments.php:68
+#: comments.php:68
 msgid "Comment"
 msgstr ""
 
-#: ../comments.php:74
+#: comments.php:74
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: ../comments.php:80
+#: comments.php:80
 #, php-format
 msgid ""
-"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this "
-"account\">Log out?</a>"
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
 msgstr ""
 
-#: ../comments.php:87
+#: comments.php:87
 msgid "Your email address will not be published."
 msgstr ""
 
-#: ../comments.php:92
+#: comments.php:92
 #, php-format
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
 
-#: ../comments.php:121
+#: comments.php:121
 msgid "Comments are closed."
 msgstr ""
 
-#: ../comments.php:127
+#: comments.php:127
 msgid "Leave a Comment?"
 msgstr ""
 
-#: ../comments.php:128
+#: comments.php:128
 msgid "WRITE COMMENT"
 msgstr ""
 
+#: footer.php:59
+#, php-format
+msgid "Copyright &copy; %1$s %2$s"
+msgstr ""
+
+#: footer.php:63
+msgid "SpiderPrime by"
+msgstr ""
+
+#: footer.php:63 footer.php:63
+msgid "Sparkle Themes"
+msgstr ""
+
+#: functions.php:51
+msgid "Primary"
+msgstr ""
+
+#: functions.php:118
+msgid "Sidebar Widget Area"
+msgstr ""
+
+#: functions.php:120 functions.php:130 functions.php:140 functions.php:150
+#: functions.php:160
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:128
+msgid "Footer Widget Area One"
+msgstr ""
+
+#: functions.php:138
+msgid "Footer Widget Area Two"
+msgstr ""
+
+#: functions.php:148
+msgid "Footer Widget Area Three"
+msgstr ""
+
+#: functions.php:158
+msgid "Footer Widget Area Four"
+msgstr ""
+
+#: functions.php:287
+msgid "Display Layout Options"
+msgstr ""
+
+#: functions.php:299
+msgid "Left Sidebar"
+msgstr ""
+
+#: functions.php:304
+msgid "Right (Default)"
+msgstr ""
+
+#: functions.php:309
+msgid "Full width"
+msgstr ""
+
 #. Name of the template
-msgid "BLog Page"
+msgid "BlogPage"
 msgstr ""
 
-#: ../inc/template-tags.php:28
-#, php-format
-msgctxt "post date"
-msgid "%s"
+#: template-blogs.php:78 template-parts/content-search.php:38
+#: template-parts/content.php:56
+msgid "Read More"
 msgstr ""
 
-#: ../inc/template-tags.php:33
-#, php-format
-msgctxt "post author"
-msgid "By %s"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#. translators: used between list items, there is a space after the comma
-#: ../inc/template-tags.php:50 ../inc/template-tags.php:56
-msgid ", "
-msgstr ""
-
-#: ../inc/template-tags.php:52
-#, php-format
-msgid "Posted in %1$s"
-msgstr ""
-
-#: ../inc/template-tags.php:58
-#, php-format
-msgid "Tagged %1$s"
-msgstr ""
-
-#: ../inc/template-tags.php:64
-msgid "Leave a comment"
-msgstr ""
-
-#: ../inc/template-tags.php:64
-msgid "1 Comment"
-msgstr ""
-
-#: ../inc/template-tags.php:64
-#, php-format
-msgid "% Comments"
-msgstr ""
-
-#: ../inc/class-repeater.php:115
-msgid "SpiderPrime HomePage Section"
-msgstr ""
-
-#: ../inc/class-repeater.php:121 ../inc/class-repeater.php:211 ../inc/class-
-#: repeater.php:300
+#: inc/class-repeater.php:76 inc/class-repeater.php:148
+#: inc/class-repeater.php:238 inc/class-repeater.php:327
 msgid "Select Section Page"
 msgstr ""
 
-#: ../inc/class-repeater.php:134 ../inc/class-repeater.php:224 ../inc/class-
-#: repeater.php:313
-msgid "Select Section Layout"
+#: inc/class-repeater.php:87
+msgid "Default Section"
 msgstr ""
 
-#: ../inc/class-repeater.php:147 ../inc/class-repeater.php:237 ../inc/class-
-#: repeater.php:326
+#: inc/class-repeater.php:87
+msgid "Features Section"
+msgstr ""
+
+#: inc/class-repeater.php:87
+msgid "Portfolio Section"
+msgstr ""
+
+#: inc/class-repeater.php:87
+msgid "Call to Action Section"
+msgstr ""
+
+#: inc/class-repeater.php:87
+msgid "Blog Section"
+msgstr ""
+
+#: inc/class-repeater.php:87
+msgid "Our Team Section"
+msgstr ""
+
+#: inc/class-repeater.php:87
+msgid "Testimonial Section"
+msgstr ""
+
+#: inc/class-repeater.php:96 inc/class-repeater.php:174
+#: inc/class-repeater.php:264 inc/class-repeater.php:353
 msgid "Select Section Category"
 msgstr ""
 
-#: ../inc/class-repeater.php:159 ../inc/class-repeater.php:249 ../inc/class-
-#: repeater.php:338
+#: inc/class-repeater.php:142
+msgid "SpiderPrime HomePage Section"
+msgstr ""
+
+#: inc/class-repeater.php:161 inc/class-repeater.php:251
+#: inc/class-repeater.php:340
+msgid "Select Section Layout"
+msgstr ""
+
+#: inc/class-repeater.php:186 inc/class-repeater.php:276
+#: inc/class-repeater.php:365
 msgid "Section Background Image"
 msgstr ""
 
-#: ../inc/class-repeater.php:162 ../inc/class-repeater.php:252 ../inc/class-
-#: repeater.php:341
+#: inc/class-repeater.php:189 inc/class-repeater.php:279
+#: inc/class-repeater.php:368
 msgid "Upload Image"
 msgstr ""
 
-#: ../inc/class-repeater.php:169 ../inc/class-repeater.php:170 ../inc/class-
-#: repeater.php:258 ../inc/class-repeater.php:259 ../inc/class-repeater.php:347 ..
-#: /inc/class-repeater.php:348
+#: inc/class-repeater.php:196 inc/class-repeater.php:197
+#: inc/class-repeater.php:285 inc/class-repeater.php:286
+#: inc/class-repeater.php:374 inc/class-repeater.php:375
 msgid "Enter Title Text"
 msgstr ""
 
-#: ../inc/class-repeater.php:176 ../inc/class-repeater.php:177 ../inc/class-
-#: repeater.php:265 ../inc/class-repeater.php:266 ../inc/class-repeater.php:354 ..
-#: /inc/class-repeater.php:355
+#: inc/class-repeater.php:203 inc/class-repeater.php:204
+#: inc/class-repeater.php:292 inc/class-repeater.php:293
+#: inc/class-repeater.php:381 inc/class-repeater.php:382
 msgid "Enter Short Text"
 msgstr ""
 
-#: ../inc/class-repeater.php:183 ../inc/class-repeater.php:272 ../inc/class-
-#: repeater.php:361
+#: inc/class-repeater.php:210 inc/class-repeater.php:299
+#: inc/class-repeater.php:388
 msgid "Enter View More Button Text"
 msgstr ""
 
-#: ../inc/class-repeater.php:184 ../inc/class-repeater.php:190 ../inc/class-
-#: repeater.php:273 ../inc/class-repeater.php:362
+#: inc/class-repeater.php:211 inc/class-repeater.php:217
+#: inc/class-repeater.php:300 inc/class-repeater.php:389
 msgid "Enter View More Text"
 msgstr ""
 
-#: ../inc/class-repeater.php:189 ../inc/class-repeater.php:278 ../inc/class-
-#: repeater.php:367
+#: inc/class-repeater.php:216 inc/class-repeater.php:305
+#: inc/class-repeater.php:394
 msgid "Enter View More Button Link"
 msgstr ""
 
-#: ../inc/class-repeater.php:195 ../inc/class-repeater.php:283 ../inc/class-
-#: repeater.php:374
+#: inc/class-repeater.php:222 inc/class-repeater.php:310
+#: inc/class-repeater.php:401
 msgid "Delete Section Area"
 msgstr ""
 
-#: ../inc/class-repeater.php:205 ../inc/class-repeater.php:295
+#: inc/class-repeater.php:232 inc/class-repeater.php:322
 msgid "HomePage Section Area"
 msgstr ""
 
-#: ../inc/class-repeater.php:279 ../inc/class-repeater.php:368
+#: inc/class-repeater.php:306 inc/class-repeater.php:395
 msgid "Enter View More Link"
 msgstr ""
 
-#: ../inc/class-repeater.php:394
+#: inc/class-repeater.php:421
 msgid "Add New Section Area"
 msgstr ""
 
-#: ../inc/customizer.php:23
+#: inc/customizer.php:23
 msgid "Change the header settings here as you want"
 msgstr ""
 
-#: ../inc/customizer.php:25
+#: inc/customizer.php:25
 msgid "General Settings"
 msgstr ""
 
-#: ../inc/customizer.php:34
-msgid "Colors Settings"
+#: inc/customizer.php:30
+msgid "Logo/Site Title/Favicon"
 msgstr ""
 
-#: ../inc/customizer.php:39
+#: inc/customizer.php:34
+msgid "Themes Colors"
+msgstr ""
+
+#: inc/customizer.php:39
+msgid "Slider Settings"
+msgstr ""
+
+#: inc/customizer.php:40
 msgid "Manage you home slider section here as you want"
 msgstr ""
 
-#: ../inc/customizer.php:40
-msgid "Slider Section Settings"
+#: inc/customizer.php:51
+msgid "Enable/Disable Slider Section"
 msgstr ""
 
-#: ../inc/customizer.php:46
-msgid "Add Slider Here"
-msgstr ""
-
-#: ../inc/customizer.php:58
-msgid "Enable or Disable Slider Section"
-msgstr ""
-
-#: ../inc/customizer.php:59 ../inc/customizer.php:348
-msgid "Choose any options as you want"
-msgstr ""
-
-#: ../inc/customizer.php:63 ../inc/customizer.php:352 ../inc/customizer.php:448
+#: inc/customizer.php:55 inc/customizer.php:242 inc/customizer.php:338
 msgid "Enable"
 msgstr ""
 
-#: ../inc/customizer.php:64 ../inc/customizer.php:353 ../inc/customizer.php:449
+#: inc/customizer.php:56 inc/customizer.php:243 inc/customizer.php:339
 msgid "Disable"
 msgstr ""
 
-#: ../inc/customizer.php:84 ../inc/customizer.php:128
-msgid "Manage HomePage Section Area"
+#: inc/customizer.php:66
+msgid "Select Slide Category"
 msgstr ""
 
-#: ../inc/customizer.php:97
+#: inc/customizer.php:75
+msgid "Configer HomePage Settings"
+msgstr ""
+
+#: inc/customizer.php:76
 msgid "Manage you home page section here as you want"
 msgstr ""
 
-#: ../inc/customizer.php:99
-msgid "HomePage Section Settings"
+#: inc/customizer.php:96
+msgid "Manage HomePage Section Area"
 msgstr ""
 
-#: ../inc/customizer.php:105
-msgid "All HomePage Sections"
-msgstr ""
-
-#: ../inc/customizer.php:142
+#: inc/customizer.php:108
 msgid "Breadcrumbs Settings"
 msgstr ""
 
-#: ../inc/customizer.php:154
+#: inc/customizer.php:120
 msgid "Check to Disable the Breadcrumbs Menu"
 msgstr ""
 
-#: ../inc/customizer.php:169
+#: inc/customizer.php:135
 msgid "Breadcrumbs Background Colors"
 msgstr ""
 
-#: ../inc/customizer.php:170
+#: inc/customizer.php:136
 msgid ""
 "Select default breadcrumbs background color as you want Note :- if you "
 "upload the background image for breadcrumbs then background color is not "
 "working."
 msgstr ""
 
-#: ../inc/customizer.php:185
+#: inc/customizer.php:151
 msgid "Breadcrumbs Font Colors"
 msgstr ""
 
-#: ../inc/customizer.php:186
+#: inc/customizer.php:152
 msgid "Select default breadcrumbs Font color as you want"
 msgstr ""
 
-#: ../inc/customizer.php:198
+#: inc/customizer.php:164
 msgid "Upload Breadcrumbs Background Image"
 msgstr ""
 
-#: ../inc/customizer.php:211
+#: inc/customizer.php:177
 msgid "Enter Min Height For Breadcrumbs"
 msgstr ""
 
-#: ../inc/customizer.php:220
+#: inc/customizer.php:186
 msgid "Change the Design Settings from here as you want"
 msgstr ""
 
-#: ../inc/customizer.php:221
+#: inc/customizer.php:187
 msgid "Layout Settings"
 msgstr ""
 
-#: ../inc/customizer.php:229
-msgid "Page Layout Settings"
-msgstr ""
-
-#: ../inc/customizer.php:241
-msgid "Select page layout as you want"
-msgstr ""
-
-#: ../inc/customizer.php:255
+#: inc/customizer.php:193
 msgid "Archive Page Layout Settings"
 msgstr ""
 
-#: ../inc/customizer.php:267
+#: inc/customizer.php:205
 msgid "Select Category Page Layout"
 msgstr ""
 
-#: ../inc/customizer.php:281
-msgid "Single Page Layout Settings"
-msgstr ""
-
-#: ../inc/customizer.php:293
-msgid "Select Layout for Single Posts"
-msgstr ""
-
-#: ../inc/customizer.php:305
-msgid "Custom CSS Settings"
-msgstr ""
-
-#: ../inc/customizer.php:318
-msgid "Write your custom css"
-msgstr ""
-
-#: ../inc/customizer.php:328
+#: inc/customizer.php:218
 msgid "Footer Settings"
 msgstr ""
 
-#: ../inc/customizer.php:335
+#: inc/customizer.php:225
 msgid "Footer Area Settings"
 msgstr ""
 
-#: ../inc/customizer.php:347
+#: inc/customizer.php:237
 msgid "Enable or Disable Footer Area Section"
 msgstr ""
 
-#: ../inc/customizer.php:366
+#: inc/customizer.php:238
+msgid "Choose any options as you want"
+msgstr ""
+
+#: inc/customizer.php:256
 msgid "Footer Area Background Colors"
 msgstr ""
 
-#: ../inc/customizer.php:367
+#: inc/customizer.php:257
 msgid "Select default footer area background color as you want"
 msgstr ""
 
-#: ../inc/customizer.php:374
+#: inc/customizer.php:264
 msgid "Footer Buttom Area Settings"
 msgstr ""
 
-#: ../inc/customizer.php:389
+#: inc/customizer.php:279
 msgid "Footer Buttom Area Background Colors"
 msgstr ""
 
-#: ../inc/customizer.php:390
+#: inc/customizer.php:280
 msgid "Select default footer buttom area background color as you want"
 msgstr ""
 
-#: ../inc/customizer.php:403
-msgid "Footer Bottom Left Content (Copyright Text)"
+#: inc/customizer.php:293
+msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../inc/layouts/features-section.php:29
-msgid "More"
-msgstr ""
-
-#: ../inc/extras.php:139
+#: inc/extras.php:104
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../inc/extras.php:186
+#: inc/extras.php:153
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/extras.php:217
+#: inc/extras.php:157
+#, php-format
+msgid "<h4 class=\"media-heading\">%s</h4>"
+msgstr ""
+
+#: inc/extras.php:165
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/extras.php:184
 msgid "Home"
 msgstr ""
 
-#: ../inc/extras.php:233
+#: inc/extras.php:199
 msgid "Archive by category"
 msgstr ""
 
-#: ../inc/extras.php:235
+#: inc/extras.php:201
 msgid "Search results for"
 msgstr ""
 
-#: ../inc/extras.php:298
+#: inc/extras.php:266
 msgid "Posts tagged"
 msgstr ""
 
-#: ../inc/extras.php:302
+#: inc/extras.php:270
 msgid "Articles posted by "
 msgstr ""
 
-#: ../inc/extras.php:310
+#: inc/extras.php:272
+msgid "Error 404"
+msgstr ""
+
+#: inc/extras.php:278
 msgid "Page"
 msgstr ""
 
-#. Name of the template
-msgid "Home Page"
+#: inc/hooks.php:45
+msgid "More"
+msgstr ""
+
+#: inc/template-tags.php:28
+#, php-format
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:33
+#, php-format
+msgctxt "post author"
+msgid "By %s"
+msgstr ""
+
+#. used between list items, there is a space after the comma
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "% Comments"
+msgstr ""
+
+#. %s: Name of current post
+#. %s: Name of current post
+#: inc/template-tags.php:71 template-parts/content-page.php:30
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:19 template-parts/content.php:46
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content.php:41
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #. Name of the theme
 msgid "SpiderPrime"
 msgstr ""
 
-#. Theme URI of the theme
-msgid "http://sparklewpthemes.com/themes/spiderprime/"
-msgstr ""
-
 #. Description of the theme
 msgid ""
-"Spider Prime is responsive multipurpose WordPress business theme. Spider "
-"Prime is a free and elegant theme that can be used for web agency business,"
+"SpiderPrime is responsive multipurpose WordPress business theme. SpiderPrime "
+"is a free and elegant theme that can be used for web agency business,"
 "corporate business,personal or portfolio, photography business sites and "
 "freelancer. It comes with a clean and beautiful design, completed by the "
 "parallax background image effect, which makes it run smoothly and easily. "
 "You can simply modify everything, as the theme comes with a complex and user-"
-"friendly set of customization options. Spider Prime is Compatible with WPML "
+"friendly set of customization options. SpiderPrime is Compatible with WPML "
 "and SEO Friendly and is one of the best business themes."
 msgstr ""
 
+#. URI of the theme
+msgid "http://sparklewpthemes.com/wordpress-themes/spiderprime/"
+msgstr ""
+
 #. Author of the theme
-msgid "Sparkle Wp Themes"
+msgid "sparklewpthemes"
 msgstr ""
 
 #. Author URI of the theme

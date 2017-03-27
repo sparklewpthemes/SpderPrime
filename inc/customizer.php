@@ -27,9 +27,9 @@ function spiderprime_customize_register( $wp_customize ) {
 
 	// Header Logo Section
 	$wp_customize->get_section('title_tagline' )->panel = 'spiderprime_general_settings';
+	$wp_customize->get_section('title_tagline' )->title = __( 'Logo/Site Title/Favicon','spiderprime' );
 	$wp_customize->get_section('title_tagline' )->priority = 0;
 	$wp_customize->get_section('background_image' )->panel = 'spiderprime_general_settings';
-	$wp_customize->get_section('header_image' )->panel = 'spiderprime_general_settings';
 	$wp_customize->get_section('colors' )->panel = 'spiderprime_general_settings';
 	$wp_customize->get_section('colors')->title = __( 'Themes Colors','spiderprime' );      
 
@@ -187,34 +187,6 @@ function spiderprime_customize_register( $wp_customize ) {
 	  'title' => __('Layout Settings', 'spiderprime'),
 	  'priority' => 9,
 	));
-
-
-		// Layout for pages only
-		$wp_customize->add_section('spiderprime_layout_page_setting', array(
-			'priority' => 4,
-			'title' => __('Page Layout Settings', 'spiderprime'),
-			'panel'=> 'spiderprime_design_options'
-		));
-
-		$wp_customize->add_setting('spiderprime_page_layout', array(
-			'default' => 'rightsidebar',
-			'capability' => 'edit_theme_options',
-			'sanitize_callback' => 'spiderprime_layout_sanitize'  //done
-		));
-
-		$wp_customize->add_control(new spiderprime_Image_Radio_Control($wp_customize, 'spiderprime_page_layout', array(
-		'type' => 'radio',
-		'label' => __('Select page layout as you want', 'spiderprime'),
-		'section' => 'spiderprime_layout_page_setting',
-		'settings' => 'spiderprime_page_layout',
-		'choices' => array( 
-		      'leftsidebar' => get_template_directory_uri() . '/images/left-sidebar.png',  
-		      'rightsidebar' => get_template_directory_uri() . '/images/right-sidebar.png', 
-		      'nosidebar' => get_template_directory_uri() . '/images/no-sidebar.png',
-		    )
-		)));
-
-
 		// Archive or Category page Layout only
 		$wp_customize->add_section('spiderprime_archive_page_layout_setting', array(
 		  'priority' => 5,
@@ -234,59 +206,12 @@ function spiderprime_customize_register( $wp_customize ) {
 		  'section' => 'spiderprime_archive_page_layout_setting',
 		  'settings' => 'spiderprime_archive_page_layout',
 		  'choices' => array( 
-		          'leftsidebar' => get_template_directory_uri() . '/images/left-sidebar.png',  
-		          'rightsidebar' => get_template_directory_uri() . '/images/right-sidebar.png', 
-		          'nosidebar' => get_template_directory_uri() . '/images/no-sidebar.png',
-		     )
-		)));	   
-
-
-		// Layout for single posts
-		$wp_customize->add_section('spiderprime_single_posts_layout_setting', array(
-			'priority' => 6,
-			'title' => __('Single Page Layout Settings', 'spiderprime'),
-			'panel'=> 'spiderprime_design_options'
-		));
-
-		$wp_customize->add_setting('spiderprime_single_posts_layout', array(
-			'default' => 'rightsidebar',
-		  'capability' => 'edit_theme_options',
-			'sanitize_callback' => 'spiderprime_layout_sanitize'  //done
-		));
-
-		$wp_customize->add_control(new spiderprime_Image_Radio_Control($wp_customize, 'spiderprime_single_posts_layout', array(
-			'type' => 'radio',
-			'label' => __('Select Layout for Single Posts', 'spiderprime'),
-			'section' => 'spiderprime_single_posts_layout_setting',
-			'settings' => 'spiderprime_single_posts_layout',
-			'choices' => array( 
-		          'leftsidebar' => get_template_directory_uri() . '/images/left-sidebar.png',  
-		          'rightsidebar' => get_template_directory_uri() . '/images/right-sidebar.png', 
-		          'nosidebar' => get_template_directory_uri() . '/images/no-sidebar.png',
+				'leftsidebar' => get_template_directory_uri() . '/images/left-sidebar.png',  
+				'rightsidebar' => get_template_directory_uri() . '/images/right-sidebar.png', 
+				'nosidebar' => get_template_directory_uri() . '/images/no-sidebar.png',
 		    )
 		)));
-
-	// Start of the Design Options
-	$wp_customize->add_section('spiderprime_custom_css_setting', array(
-	  'title' => __('Custom CSS Settings', 'spiderprime'),
-	  'priority' => 10,
-	));
-
-		$wp_customize->add_setting('spiderprime_custom_css', array(
-		  'default' => '',
-		  'capability' => 'edit_theme_options',
-		  'sanitize_callback' => 'wp_filter_nohtml_kses',
-		));
-
-		$wp_customize->add_control('spiderprime_custom_css', array(
-		   'type' => 'textarea',
-		  'label' => __('Write your custom css', 'spiderprime'),
-		  'section' => 'spiderprime_custom_css_setting',
-		  'settings' => 'spiderprime_custom_css'
-		));
-		// End of the Design Options
-
-
+	
 	// Start Footer Section here      
 	$wp_customize->add_panel('spiderprime_footer_settings', array(
 	  'priority' => 11,

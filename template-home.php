@@ -15,7 +15,9 @@ get_header(); ?>
 
 <?php 
 	if( esc_attr( get_theme_mod('spiderprime_slider_section_options','enable' ) == 'enable') ) {
+
 		do_action('spiderprime_slider');
+
 	}
 ?>
 

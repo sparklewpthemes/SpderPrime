@@ -65,7 +65,7 @@ get_header(); ?>
 
 			<?php  if ($spiderprime_archive_layout == 'rightsidebar') : ?>
 				<section class="span3 sidebar">						
-					<?php get_sidebar('right'); ?>	
+					<?php get_sidebar(); ?>	
 				</section> <!-- .span3 -->
 			<?php endif; ?>
 

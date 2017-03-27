@@ -4,12 +4,12 @@ Theme URI: http://sparklewpthemes.com/wordpress-themes/spiderprime/
 Author: sparklewpthemes
 Author URI: http://sparklewpthemes.com/
 Description: SpiderPrime is responsive multipurpose WordPress business theme. SpiderPrime is a free and elegant theme that can be used for web agency business,corporate business,personal or portfolio, photography business sites and freelancer. It comes with a clean and beautiful design, completed by the parallax background image effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. SpiderPrime is Compatible with WPML and SEO Friendly and is one of the best business themes.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: spiderprime
 Domain Path: /languages/
-Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, theme-options, featured-images
+Tags: left-sidebar, right-sidebar, theme-options, featured-images, custom-logo, translation-ready
 Spider Prime WordPress Theme, Copyright 2016 http://spiderbuzz.com/
 Spider Prime is distributed under the terms of the GNU GPL
 Spider Prime is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
@@ -681,7 +681,7 @@ textarea {
 
 section.what-we-do {
 	text-align: center;
-	padding: 30px 0px;
+	padding: 40px 0px 10px 0px;
 }
 
 .services-con article {
